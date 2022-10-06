@@ -39,14 +39,15 @@ public class ModelDB {
                         "title CHARACTER(20)," +
                         "year integer," +
                         "elo_rate integer," +
-                        "image_id integer" +
+                        "image_id integer," +
+                        "CONSTRAINT unique_film UNIQUE (title,year) " +
                         ")");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
 
-        public  void InsertFilm(Film newFilm) {
+        public void InsertFilm(Film newFilm) {
             try {
                 statement.executeUpdate("INSERT INTO Film " +
                         "(film_id,title,year,elo_rate ,image_id) VALUES (" +
@@ -60,6 +61,9 @@ public class ModelDB {
                 );
 
             } catch (SQLException e) {
+                //TODO: change function so it return a String for insert confirmation
+                // or duplicate Entry Error
+
                 e.printStackTrace();
             }
         }

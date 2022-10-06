@@ -3,26 +3,31 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.elo.FilmEntry">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.elo.FilmEntryController">
    <center>
       <VBox prefHeight="356.0" prefWidth="511.0" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="20.0" prefWidth="600.0">
                <children>
                   <Label text="Title: " />
-                  <TextField />
+                  <TextField fx:id="inputTitle" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="600.0">
                <children>
                   <Label text="Year:" />
-                  <TextField />
+                  <TextField fx:id="inputYear" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="34.0" prefHeight="20.0" prefWidth="600.0">
                <children>
                   <Label text="Elo Rating:" />
-                  <TextField />
+                  <TextField fx:id="inputElo" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="34.0" prefHeight="20.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="insertButton" mnemonicParsing="false" onAction="#InsertEntry" text="Insert" />
                </children>
             </HBox>
          </children>
@@ -34,4 +39,11 @@
    <top>
       <Pane prefHeight="44.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
    </top>
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button mnemonicParsing="false" text="back" />
+        </buttons>
+      </ButtonBar>
+   </bottom>
 </BorderPane>

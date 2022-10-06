@@ -22,18 +22,19 @@ public class HelloApplication extends Application  implements EventHandler<Actio
     @Override
     public void start(Stage stage) throws IOException {
         ModelDB db = new ModelDB("t1.db");
-        db.InsertFilm(f1);
-        db.InsertFilm(f2);
+        //db.InsertFilm(f1);
+        //db.InsertFilm(f2);
 
         List<Film> tempList = db.GetAllFilms();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mainMenu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FilmEntry.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 800);
+       /*
         lastButton = (Button) scene.lookup("#last");
         lastButton.setOnAction(this);
         txtField = (Label) scene.lookup("#filmTitle");
 
-
+    */
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
