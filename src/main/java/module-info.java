@@ -4,8 +4,8 @@ module com.example.elo {
     requires java.sql;
 
 
-    opens com.example.elo to javafx.fxml;
-    exports com.example.elo;
+    opens controller to javafx.fxml;
+    exports controller;
     exports Model;
     opens Model to javafx.fxml;
 }

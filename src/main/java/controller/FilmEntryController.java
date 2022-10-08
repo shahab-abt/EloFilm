@@ -1,4 +1,4 @@
-package com.example.elo;
+package controller;
 
 import Model.Film;
 import Model.ModelDB;
@@ -20,6 +20,8 @@ public class FilmEntryController {
 
     @FXML
     private Button insertButton;
+    @FXML
+    private Button btnMainMenu;
 
     @FXML
     private void InsertEntry(ActionEvent event) throws Exception {
@@ -34,5 +36,9 @@ public class FilmEntryController {
         //remove:
         db.GetAllFilms();
     }
+    @FXML
+    private void OpenMainMenu(ActionEvent event) throws Exception{
+        StageManager.staticClass.Switch();
 
+    }
 }

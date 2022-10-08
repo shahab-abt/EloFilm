@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="360.0" prefWidth="437.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.elo.mainMenuController">
+<BorderPane prefHeight="360.0" prefWidth="437.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainMenuController">
    <children>
 
    </children>
@@ -12,7 +12,7 @@
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
          <children>
 
-            <Button fx:id="btnBackToMain" mnemonicParsing="false" onAction="#changeToMainScreen" text="Add Film" />
+            <Button fx:id="btnAddFilm" mnemonicParsing="false" onAction="#OpenAddFilm" text="Add Film" />
             <Button mnemonicParsing="false" text="View" />
             <Button mnemonicParsing="false" text="File" />
 

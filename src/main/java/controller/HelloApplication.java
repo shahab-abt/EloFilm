@@ -1,4 +1,4 @@
-package com.example.elo;
+package controller;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 import Model.*;
@@ -26,8 +27,15 @@ public class HelloApplication extends Application  implements EventHandler<Actio
         //db.InsertFilm(f2);
 
         List<Film> tempList = db.GetAllFilms();
+        URL tempTest =  HelloApplication.class.getResource("mainMenu.fxml");
+        URL test2= FilmEntryController.class.getResource("mainMenu.fxml");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FilmEntry.fxml"));
+
+
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mainMenu.fxml"));
+        FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("FilmEntry.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 800);
        /*
         lastButton = (Button) scene.lookup("#last");
