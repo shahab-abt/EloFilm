@@ -13,7 +13,7 @@
          <children>
 
             <Button fx:id="btnAddFilm" mnemonicParsing="false" onAction="#OpenAddFilm" text="Add Film" />
-            <Button mnemonicParsing="false" text="View" />
+            <Button fx:id="btnViewFilms" mnemonicParsing="false" text="ViewFilm" onAction="#OpenViewFilm" />
             <Button mnemonicParsing="false" text="File" />
 
          </children>

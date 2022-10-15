@@ -5,7 +5,6 @@ import Model.ModelDB;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class FilmEntryController {
@@ -38,7 +37,8 @@ public class FilmEntryController {
     }
     @FXML
     private void OpenMainMenu(ActionEvent event) throws Exception{
-        StageManager.staticClass.Switch();
+
+        StageManager.SM.NewScene("mainMenu", "Main Menu");
 
     }
 }

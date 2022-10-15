@@ -9,8 +9,20 @@ public class mainMenuController {
     private Button btnAddFilm;
 
     @FXML
+    private Button btnViewFilms;
+
+    @FXML
     private void OpenAddFilm(ActionEvent event) throws Exception {
-        StageManager.staticClass.Switch();
+        StageManager.SM.NewScene("FilmEntry", "Add new Film");
+        /*
+        StageManager stage = new StageManager();
+        stage.UpdateStage("FilmEnry");
+        */
+    }
+
+    @FXML
+    private void OpenViewFilm(ActionEvent event) throws Exception {
+        StageManager.SM.NewScene("ViewFilm", "View saved Films");
         /*
         StageManager stage = new StageManager();
         stage.UpdateStage("FilmEnry");

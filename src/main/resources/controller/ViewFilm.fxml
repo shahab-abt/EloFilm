@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewFilmController">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="314.0">
+               <children>
+                  <Region prefHeight="100.0" prefWidth="38.0" HBox.hgrow="ALWAYS" />
+                  <Label text="Title:" textAlignment="CENTER" />
+                  <Region prefHeight="100.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="showTitle" layoutX="10.0" layoutY="10.0" text="T" />
+                  <Region prefHeight="100.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="314.0">
+               <children>
+                  <Region prefHeight="100.0" prefWidth="38.0" HBox.hgrow="ALWAYS" />
+                  <Label text="Year:" textAlignment="CENTER" />
+                  <Region prefHeight="100.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="showYear" layoutX="10.0" layoutY="10.0" text="Y" />
+                  <Region prefHeight="100.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="314.0">
+               <children>
+                  <Region prefHeight="100.0" prefWidth="38.0" HBox.hgrow="ALWAYS" />
+                  <Label text="Elo Rate:" textAlignment="CENTER" />
+                  <Region prefHeight="100.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Label  fx:id="showElo" layoutX="10.0" layoutY="10.0" text="E" />
+                  <Region prefHeight="100.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="141.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="145.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER" prefHeight="76.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnFirstPage" onAction="#ChangeFilm"  userData="0" mnemonicParsing="false" prefWidth="80.0" text="First" />
+                  <Region prefHeight="76.0" prefWidth="10.0" />
+                  <Button fx:id="btnPreviousPage" onAction="#ChangeFilm" userData="-1" mnemonicParsing="false" prefWidth="80.0" text="Previous" />
+                  <Region prefHeight="76.0" prefWidth="10.0" />
+                  <Button fx:id="btnNextPage" onAction="#ChangeFilm" userData="1" mnemonicParsing="false" prefWidth="80.0" text="Next" />
+                  <Region prefHeight="76.0" prefWidth="10.0" />
+                  <Button fx:id="btnLastPage" onAction="#ChangeFilm" userData="2" mnemonicParsing="false" prefWidth="80.0" text="Last" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="btnMainMenu" mnemonicParsing="false" onAction="#OpenMainMenu" text="back" />
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+   </bottom>
+   <top>
+      <VBox alignment="CENTER" prefHeight="77.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+
+            <Label text="View Films" />
+
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
