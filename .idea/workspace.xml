@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="in View page, user can see saved Film in Database,">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/controller/ViewFilm.fxml" afterDir="false" />
+    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/TableViewFilm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/controller/TableViewFilmController.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/mainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/mainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/mainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/ViewFilm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/ViewFilm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665225704238</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="in View page, user can see saved Film in Database,">
+      <created>1665834682471</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665834682471</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,7 +174,8 @@
     <MESSAGE value="EloProject created" />
     <MESSAGE value="Set up SQLite and create a Model class.&#10;Start creating an input window for inserting new films." />
     <MESSAGE value="simple Switch Stage between two Scene" />
-    <option name="LAST_COMMIT_MESSAGE" value="simple Switch Stage between two Scene" />
+    <MESSAGE value="in View page, user can see saved Film in Database," />
+    <option name="LAST_COMMIT_MESSAGE" value="in View page, user can see saved Film in Database," />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -230,18 +237,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
-          <line>37</line>
+          <line>54</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
-          <line>61</line>
+          <line>283</line>
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17.0.2/javafx-base-17.0.2-linux.jar!/javafx/collections/ObservableList.class</url>
+          <line>34</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
+          <line>230</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

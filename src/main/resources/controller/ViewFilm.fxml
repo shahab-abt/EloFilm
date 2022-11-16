@@ -30,34 +30,51 @@
                   <Region prefHeight="100.0" prefWidth="38.0" HBox.hgrow="ALWAYS" />
                   <Label text="Elo Rate:" textAlignment="CENTER" />
                   <Region prefHeight="100.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                  <Label  fx:id="showElo" layoutX="10.0" layoutY="10.0" text="E" />
+                  <Label fx:id="showElo" layoutX="10.0" layoutY="10.0" text="E" />
                   <Region prefHeight="100.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
+            <TableView fx:id="tableView" prefHeight="50.0" prefWidth="498.0">
+               <columns>
+                  <TableColumn fx:id="tc1" text="Film Title">
+
+                  </TableColumn>
+                  <TableColumn text="Year">
+                  </TableColumn>
+                  <TableColumn prefWidth="94.0" text="Elo rate">
+                  </TableColumn>
+
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+
+            </TableView>
+            <ListView fx:id="movieList" prefHeight="32.0" prefWidth="515.0" />
          </children>
       </VBox>
    </center>
    <left>
-      <AnchorPane prefHeight="400.0" prefWidth="141.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="195.0" prefWidth="49.0" BorderPane.alignment="CENTER" />
    </left>
    <right>
-      <AnchorPane prefHeight="400.0" prefWidth="145.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="195.0" prefWidth="36.0" BorderPane.alignment="CENTER" />
    </right>
    <bottom>
       <VBox>
          <children>
-            <HBox alignment="CENTER" prefHeight="76.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btnFirstPage" onAction="#ChangeFilm"  userData="0" mnemonicParsing="false" prefWidth="80.0" text="First" />
+                  <Button fx:id="btnFirstPage" mnemonicParsing="false" onAction="#ChangeFilm" prefWidth="80.0" text="First" userData="0" />
                   <Region prefHeight="76.0" prefWidth="10.0" />
-                  <Button fx:id="btnPreviousPage" onAction="#ChangeFilm" userData="-1" mnemonicParsing="false" prefWidth="80.0" text="Previous" />
+                  <Button fx:id="btnPreviousPage" mnemonicParsing="false" onAction="#ChangeFilm" prefWidth="80.0" text="Previous" userData="-1" />
                   <Region prefHeight="76.0" prefWidth="10.0" />
-                  <Button fx:id="btnNextPage" onAction="#ChangeFilm" userData="1" mnemonicParsing="false" prefWidth="80.0" text="Next" />
+                  <Button fx:id="btnNextPage" mnemonicParsing="false" onAction="#ChangeFilm" prefWidth="80.0" text="Next" userData="1" />
                   <Region prefHeight="76.0" prefWidth="10.0" />
-                  <Button fx:id="btnLastPage" onAction="#ChangeFilm" userData="2" mnemonicParsing="false" prefWidth="80.0" text="Last" />
+                  <Button fx:id="btnLastPage" mnemonicParsing="false" onAction="#ChangeFilm" prefWidth="80.0" text="Last" userData="2" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="600.0">
+            <HBox alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="600.0">
                <children>
                   <Button fx:id="btnMainMenu" mnemonicParsing="false" onAction="#OpenMainMenu" text="back" />
                </children>
