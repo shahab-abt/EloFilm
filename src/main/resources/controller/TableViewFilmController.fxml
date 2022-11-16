@@ -7,11 +7,11 @@
     <center>
         <TableView fx:id="tableView" prefHeight="50.0" prefWidth="498.0">
             <columns>
-                <TableColumn text="Film Title">
+                <TableColumn fx:id="filmId" text="Film Title">
                 </TableColumn>
-                <TableColumn text="Year">
+                <TableColumn fx:id="yearId" text="Year">
                 </TableColumn>
-                <TableColumn text="Elo Rating">
+                <TableColumn fx:id="eloId" text="Elo Rating">
                 </TableColumn>
             </columns>
         </TableView>

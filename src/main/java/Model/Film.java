@@ -3,7 +3,7 @@ public class Film {
     private String title;
     private int year, film_id, image_id, eloRate;
 
-    //Create a new Object 
+    //Create a new Object
     public Film(String title, int year, int image_id,int eloRate){
         this.film_id = 0;
         this.title =title;
