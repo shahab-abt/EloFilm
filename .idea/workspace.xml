@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TableViewFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TableViewFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/TableViewFilmController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/TableViewFilmController.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/mainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/mainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/ViewFilm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/ViewFilm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/mainMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668608895762</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="a test version of Table View">
+      <created>1668631246210</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668631246210</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,7 +193,8 @@
     <MESSAGE value="simple Switch Stage between two Scene" />
     <MESSAGE value="in View page, user can see saved Film in Database," />
     <MESSAGE value="Change to another branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change to another branch" />
+    <MESSAGE value="a test version of Table View" />
+    <option name="LAST_COMMIT_MESSAGE" value="a test version of Table View" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -237,12 +246,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/mainMenuController.java</url>
-          <line>17</line>
+          <line>53</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
-          <line>27</line>
+          <line>29</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -267,7 +276,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
-          <line>65</line>
+          <line>70</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
