@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FilmEntryController">
+<BorderPane fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FilmEntryController">
    <center>
-      <VBox prefHeight="356.0" prefWidth="511.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="356.0" prefWidth="511.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="20.0" prefWidth="600.0">
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="600.0">
                <children>
                   <Label text="Title: " />
                   <TextField fx:id="inputTitle" />
                </children>
             </HBox>
-            <HBox layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="600.0">
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="600.0">
                <children>
                   <Label text="Year:" />
                   <TextField fx:id="inputYear" />
                </children>
             </HBox>
-            <HBox layoutX="10.0" layoutY="34.0" prefHeight="20.0" prefWidth="600.0">
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="34.0" prefHeight="20.0" prefWidth="600.0">
                <children>
                   <Label text="Elo Rating:" />
                   <TextField fx:id="inputElo" />
                </children>
             </HBox>
-            <HBox layoutX="10.0" layoutY="34.0" prefHeight="20.0" prefWidth="600.0">
+               <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" onKeyPressed="#ImagePaste" onMouseClicked="#MouseClicked" pickOnBounds="true" preserveRatio="true" />
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="34.0" prefHeight="20.0" prefWidth="600.0">
                <children>
                   <Button fx:id="insertButton" mnemonicParsing="false" onAction="#InsertEntry" text="Insert" />
                </children>
@@ -42,7 +44,7 @@
    <bottom>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <buttons>
-          <Button fx:id="btnMainMenu"  mnemonicParsing="false" text="back" onAction="#OpenMainMenu"  />
+          <Button fx:id="btnMainMenu" mnemonicParsing="false" onAction="#OpenMainMenu" text="back" />
         </buttons>
       </ButtonBar>
    </bottom>
