@@ -26,7 +26,7 @@
                   <TextField fx:id="inputElo" />
                </children>
             </HBox>
-               <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" onKeyPressed="#ImagePaste" onMouseClicked="#MouseClicked" pickOnBounds="true" preserveRatio="true" />
+               <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" onKeyPressed="#ImagePaste"  pickOnBounds="true" preserveRatio="true" />
             <HBox alignment="CENTER" layoutX="10.0" layoutY="34.0" prefHeight="20.0" prefWidth="600.0">
                <children>
                   <Button fx:id="insertButton" mnemonicParsing="false" onAction="#InsertEntry" text="Insert" />

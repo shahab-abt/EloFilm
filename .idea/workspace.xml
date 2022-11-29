@@ -6,11 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HelloController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TableViewFilm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/mainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/mainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/controller/FilmEntry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/FilmEntry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/TableViewFilmController.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668686639161</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="it's possible to paste an image from Clipboard into imageView object">
+      <created>1669632340301</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669632340301</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,7 +216,8 @@
     <MESSAGE value="Change to another branch" />
     <MESSAGE value="a test version of Table View" />
     <MESSAGE value="new MainMenu with TableView To show all Films" />
-    <option name="LAST_COMMIT_MESSAGE" value="new MainMenu with TableView To show all Films" />
+    <MESSAGE value="it's possible to paste an image from Clipboard into imageView object" />
+    <option name="LAST_COMMIT_MESSAGE" value="it's possible to paste an image from Clipboard into imageView object" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -244,33 +258,13 @@
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/HelloApplication.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/HelloApplication.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/mainMenuController.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
-          <line>54</line>
+          <line>53</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
-          <line>283</line>
+          <line>282</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -280,7 +274,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
-          <line>230</line>
+          <line>229</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -290,13 +284,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java</url>
-          <line>78</line>
+          <line>70</line>
           <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java</url>
@@ -305,13 +294,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
-          <line>81</line>
+          <line>72</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
-          <line>78</line>
+          <line>69</line>
           <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/mainMenuController.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/mainMenuController.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

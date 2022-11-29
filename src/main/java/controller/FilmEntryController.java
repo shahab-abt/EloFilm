@@ -1,28 +1,19 @@
 package controller;
 
 import Model.Film;
-import Model.ImageClipboard;
 import Model.ModelDB;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -50,6 +41,7 @@ public class FilmEntryController implements Initializable {
 
     }
 
+    // would read information
     @FXML
     private void InsertEntry(ActionEvent event) throws Exception {
         String tile =inputTitle.getText();
@@ -68,7 +60,7 @@ public class FilmEntryController implements Initializable {
     @FXML
     private void OpenMainMenu(ActionEvent event) throws Exception{
 
-        StageManager.SM.NewScene("mainMenu", "Main Menu");
+        StageManager.SM.SetScene("mainMenu", "Main Menu");
 
     }
 
@@ -91,26 +83,35 @@ public class FilmEntryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("hello");
-        Clipboard.viewStatic= imageView;
+        Current.viewStatic= imageView;
+
+        //load a default image to assign to imageView
         File file = new File("sample.png");
         Image image =new Image(file.toURI().toString());
-        UpdateImageView(image);
+        Current.setImage(image);
+        //UpdateImageView(image);
     }
 
+    /* defined in static
     private void UpdateImageView(Image image){
         imageView.setImage(image);
     }
 
+     */
+
+    /* what usage have it??
     public void MouseClicked(MouseEvent mouseEvent) {
         System.out.println("mouse click detected");
     }
+
+     */
 
     public void ImagePaste(KeyEvent keyEvent) {
         System.out.println(keyEvent.getCode());
     }
 
-    public static class Clipboard{
+    //Static Class make it possible to manipulate ImageView from another Class
+    public static class Current {
         private static Image image;
         private static ImageView viewStatic;
 

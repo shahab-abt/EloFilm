@@ -10,7 +10,6 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -268,7 +267,7 @@ public class ViewFilmController {
 
     @FXML
     private void OpenMainMenu(ActionEvent event) throws Exception{
-        StageManager.SM.NewScene("mainMenu", "Main Menu");
+        StageManager.SM.SetScene("mainMenu", "Main Menu");
     }
 
 

@@ -1,7 +1,6 @@
 package controller;
 
 import Model.Film;
-import Model.UserFilm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -47,19 +46,16 @@ public class mainMenuController implements Initializable  {
     @FXML
     private Button btnViewFilms;
 
+    //function to navigate from a Button to FilmEntry
     @FXML
     private void OpenAddFilm(ActionEvent event) throws Exception {
-        StageManager.SM.NewScene("FilmEntry", "Add new Film");
-        /*
-        StageManager stage = new StageManager();
-        stage.UpdateStage("FilmEnry");
-        */
+        StageManager.SM.SetScene("FilmEntry", "Add new Film");
     }
 
     @FXML
     private void OpenViewFilm(ActionEvent event) throws Exception {
         //StageManager.SM.NewScene("ViewFilm", "View saved Films");
-        StageManager.SM.NewScene("TableViewFilmController", "View saved Films");
+        StageManager.SM.SetScene("TableViewFilmController", "View saved Films");
         /*
         StageManager stage = new StageManager();
         stage.UpdateStage("FilmEnry");
@@ -77,6 +73,6 @@ public class mainMenuController implements Initializable  {
     }
 
     public void OpenMainMenu(ActionEvent actionEvent) throws IOException {
-        StageManager.SM.NewScene("FilmEntry", "Add New Film");
+        StageManager.SM.SetScene("FilmEntry", "Add New Film");
     }
 }
