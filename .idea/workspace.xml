@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="" />
+    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TableViewFilm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/mainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/mainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/FilmEntry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/FilmEntry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/TableViewFilmController.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/hello-view.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,10 +33,23 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2FToF4IkKZEX8Svjd3GURsnGQgw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -31,29 +57,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_directory_selection": "/home/shahab/Proj/ELOFILM/ELO/src/main/java/com/example/elo",
-    "last_opened_file_path": "/home/shahab/Proj/ELOFILM/ELO/sqlite-jdbc-3.36.0.3.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.42643678"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/shahab/Proj/ELOFILM/ELO/src/main/java/com/example/elo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/shahab/Proj/ELOFILM/ELO/sqlite-jdbc-3.36.0.3.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.42643678&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.elo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/Model" />
+      <recent name="$PROJECT_DIR$/src/main/resources/controller" />
+      <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
+      <recent name="$PROJECT_DIR$/src/main/java/fxml" />
       <recent name="$PROJECT_DIR$/src/main/java" />
-      <recent name="$PROJECT_DIR$/src/main" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.StageManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.elo.HelloApplication" />
       <module name="ELO" />
@@ -67,8 +95,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StageManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.StageManager" />
+      <module name="ELO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="controller.HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.HelloApplication" />
+      <module name="ELO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StageManager" />
+        <item itemvalue="Application.controller.HelloApplication" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
@@ -96,7 +152,49 @@
       <option name="project" value="LOCAL" />
       <updated>1664744110465</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="simple Switch Stage between two Scene">
+      <created>1665225704238</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665225704238</updated>
+    </task>
+    <task id="LOCAL-00004" summary="in View page, user can see saved Film in Database,">
+      <created>1665834682471</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665834682471</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Change to another branch">
+      <created>1668608895762</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668608895762</updated>
+    </task>
+    <task id="LOCAL-00006" summary="a test version of Table View">
+      <created>1668631246210</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668631246210</updated>
+    </task>
+    <task id="LOCAL-00007" summary="new MainMenu with TableView To show all Films">
+      <created>1668686639161</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1668686639161</updated>
+    </task>
+    <task id="LOCAL-00008" summary="it's possible to paste an image from Clipboard into imageView object">
+      <created>1669632340301</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669632340301</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,14 +211,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="EloProject created" />
     <MESSAGE value="Set up SQLite and create a Model class.&#10;Start creating an input window for inserting new films." />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up SQLite and create a Model class.&#10;Start creating an input window for inserting new films." />
+    <MESSAGE value="simple Switch Stage between two Scene" />
+    <MESSAGE value="in View page, user can see saved Film in Database," />
+    <MESSAGE value="Change to another branch" />
+    <MESSAGE value="a test version of Table View" />
+    <MESSAGE value="new MainMenu with TableView To show all Films" />
+    <MESSAGE value="it's possible to paste an image from Clipboard into imageView object" />
+    <option name="LAST_COMMIT_MESSAGE" value="it's possible to paste an image from Clipboard into imageView object" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/elo/HelloApplication.java</url>
-          <line>43</line>
+          <line>45</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -132,6 +236,86 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/elo/mainMenuController.java</url>
           <line>12</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/elo/FilmEntryController.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/elo/FilmEntryController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/elo/FilmEntryController.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/elo/HelloApplication.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
+          <line>282</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17.0.2/javafx-base-17.0.2-linux.jar!/javafx/collections/ObservableList.class</url>
+          <line>34</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
+          <line>229</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/mainMenuController.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/mainMenuController.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

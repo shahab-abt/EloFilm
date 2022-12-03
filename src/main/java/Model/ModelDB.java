@@ -1,6 +1,8 @@
 package Model;
 
-import java.io.File;
+import javafx.scene.image.Image;
+
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +17,7 @@ public class ModelDB {
 
         public  ModelDB(String name) {
             this.dBName = name;
-            this.dbFile = new File("DB.db");
+            this.dbFile = new File(name);
             // if no DataBase exist call to create new one
             if (!dbFile.exists()) {
                 CreateTables();
@@ -29,6 +31,8 @@ public class ModelDB {
             }
         }
 
+
+
         private  void CreateTables() {
             try {
                 connection = DriverManager.getConnection("jdbc:sqlite:" + dBName);
@@ -39,14 +43,18 @@ public class ModelDB {
                         "title CHARACTER(20)," +
                         "year integer," +
                         "elo_rate integer," +
-                        "image_id integer" +
+                        "image_id integer," +
+                        "CONSTRAINT unique_film UNIQUE (title,year) " +
                         ")");
+                statement.executeUpdate("CREATE TABLE image" +
+                        "(ID INT PRIMARY KEY NOT NULL, photo BLOB)");
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
 
-        public  void InsertFilm(Film newFilm) {
+        public void InsertFilm(Film newFilm) {
             try {
                 statement.executeUpdate("INSERT INTO Film " +
                         "(film_id,title,year,elo_rate ,image_id) VALUES (" +
@@ -60,7 +68,68 @@ public class ModelDB {
                 );
 
             } catch (SQLException e) {
+                //TODO: change function so it return a String for insert confirmation
+                // or duplicate Entry Error
+
                 e.printStackTrace();
+            }
+        }
+
+        public void InsertImage(){
+            try {
+            File image = new File("samplePic.png");
+            if(!image.exists()){
+                System.out.println("No Image");
+
+            }
+            int num_rows = 0;
+            FileInputStream fis = new FileInputStream(image);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            byte[] buf = new byte[1024];
+            for(int readNum; (readNum = fis.read(buf)) != -1;){
+                bos.write(buf, 0, readNum);
+            }
+            fis.close();
+            PreparedStatement ps = connection.prepareStatement(
+                    "INSERT INTO image (id, photo) VALUES(1,?)");
+            ps.setBytes(1, bos.toByteArray());
+            num_rows = ps.executeUpdate();
+
+                if(num_rows>0){
+                    System.out.println("Data has been inserted");
+                }
+            ps.close();
+
+            }catch(Exception e)
+            {
+                System.out.println(e);
+            }
+        }
+
+        public void GetImage(){
+            try {
+                ResultSet rs;
+                rs = statement.executeQuery("SELECT * FROM image");
+                while (rs.next()){
+
+                    InputStream input = rs.getBinaryStream("photo");
+                    InputStreamReader inputReader = new InputStreamReader(input);
+                    if(inputReader.ready()){
+                        File tempFile = new File("sample.jpg");
+                        FileOutputStream fos = new FileOutputStream(tempFile);
+                        byte[] buffer = new byte[1024];
+                        while(input.read(buffer) > 0){
+                            fos.write(buffer);
+                        }
+                        Image image = new Image(tempFile.toURI().toURL().toString());
+
+                    }
+                }
+
+
+            }catch(Exception e)
+            {
+                System.out.println(e);
             }
         }
 
