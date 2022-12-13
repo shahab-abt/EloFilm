@@ -2,6 +2,8 @@ package controller;
 
 import Model.Film;
 import Model.ModelDB;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 import java.io.File;
 import java.net.URL;
@@ -37,6 +40,9 @@ public class FilmEntryController implements Initializable {
     @FXML
     private ImageView imageView;
 
+    @FXML
+    private Pane imageStackPane;
+
     public FilmEntryController(){
 
     }
@@ -50,7 +56,8 @@ public class FilmEntryController implements Initializable {
 
         Film newEntry = new Film(tile, year,0, elo);
         ModelDB db = ModelDB.DB.GetModel();
-        db.InsertFilm(newEntry);
+        int filmID = db.InsertFilm(newEntry);
+        db.InsertImage(filmID,Current.image);
 
         //remove:
         db.GetAllFilms();
@@ -84,6 +91,24 @@ public class FilmEntryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Current.viewStatic= imageView;
+        inputTitle.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                if (newPropertyValue)
+                {
+
+
+                    imageStackPane.getStyleClass().remove(0);
+                    imageStackPane.getStyleClass().add("imageViewIdle");
+                    System.out.println("Textfield on focus");
+                }
+                else
+                {
+                    System.out.println("Textfield out focus");
+                }
+
+            }
+        });
 
         //load a default image to assign to imageView
         File file = new File("sample.png");
@@ -108,6 +133,14 @@ public class FilmEntryController implements Initializable {
 
     public void ImagePaste(KeyEvent keyEvent) {
         System.out.println(keyEvent.getCode());
+    }
+
+    public void imageClicked(MouseEvent mouseEvent) {
+        imageStackPane.getStyleClass().remove(0);
+        imageStackPane.getStyleClass().add("imageViewSelected");
+
+        imageStackPane.requestFocus();
+
     }
 
     //Static Class make it possible to manipulate ImageView from another Class

@@ -2,10 +2,13 @@ package Model;
 
 import javafx.scene.image.Image;
 
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 public class ModelDB {
 
@@ -37,24 +40,17 @@ public class ModelDB {
             try {
                 connection = DriverManager.getConnection("jdbc:sqlite:" + dBName);
                 statement = connection.createStatement();
-                statement.executeUpdate("CREATE TABLE IF NOT EXISTS " +
-                        "Film (" +
-                        "film_id integer PRIMARY KEY autoincrement, " +
-                        "title CHARACTER(20)," +
-                        "year integer," +
-                        "elo_rate integer," +
-                        "image_id integer," +
-                        "CONSTRAINT unique_film UNIQUE (title,year) " +
-                        ")");
-                statement.executeUpdate("CREATE TABLE image" +
-                        "(ID INT PRIMARY KEY NOT NULL, photo BLOB)");
+                statement.executeUpdate("CREATE TABLE IF NOT EXISTS Film (film_id integer PRIMARY KEY autoincrement, title CHARACTER(20),year integer,elo_rate integer," + "image_id integer, CONSTRAINT unique_film UNIQUE (title,year))");
+                statement.executeUpdate("CREATE TABLE image (ID INT PRIMARY KEY NOT NULL, photo BLOB)");
+
+
 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
 
-        public void InsertFilm(Film newFilm) {
+        public int InsertFilm(Film newFilm) {
             try {
                 statement.executeUpdate("INSERT INTO Film " +
                         "(film_id,title,year,elo_rate ,image_id) VALUES (" +
@@ -66,24 +62,40 @@ public class ModelDB {
 
                         ")"
                 );
+                int filmId= statement.executeQuery("SELECT last_insert_rowid()").getInt("last_insert_rowid()");
+                return filmId;
 
             } catch (SQLException e) {
                 //TODO: change function so it return a String for insert confirmation
                 // or duplicate Entry Error
 
                 e.printStackTrace();
+                return -1;
             }
         }
 
-        public void InsertImage(){
+        public void InsertImage(int filmID, Image image){
+
             try {
-            File image = new File("samplePic.png");
+            /*
+                File image = new File("samplePic.png");
             if(!image.exists()){
                 System.out.println("No Image");
 
             }
+
+             */
+                File tempFile = new File("tempFile.jpg");
+                //TODO image should be adjusted
+                int width = (int) image.getWidth();
+                int height = (int) image.getHeight();
+                BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
+
+                ImageIO.write(bi, "JPG", tempFile);
+
+                
             int num_rows = 0;
-            FileInputStream fis = new FileInputStream(image);
+            FileInputStream fis = new FileInputStream(tempFile);
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             byte[] buf = new byte[1024];
             for(int readNum; (readNum = fis.read(buf)) != -1;){
@@ -91,8 +103,9 @@ public class ModelDB {
             }
             fis.close();
             PreparedStatement ps = connection.prepareStatement(
-                    "INSERT INTO image (id, photo) VALUES(1,?)");
-            ps.setBytes(1, bos.toByteArray());
+                    "INSERT INTO image (id, photo) VALUES(?,?)");
+            ps.setInt(1,filmID);
+            ps.setBytes(2, bos.toByteArray());
             num_rows = ps.executeUpdate();
 
                 if(num_rows>0){

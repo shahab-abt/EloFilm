@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,8 +23,8 @@ public class StageManager extends Application {
     public void start(Stage stage) throws Exception {
         //temporal Code to check how save image into Database
         ModelDB db = new ModelDB("t1.db");
-        db.InsertImage();
-        db.GetImage();
+        //db.InsertImage();
+        //db.GetImage();
         //
 
         //Stage will be loaded in full size
@@ -58,6 +59,23 @@ public class StageManager extends Application {
             //unnecessary??
             //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(viewName+".fxml"));
             Parent page = (Parent) new FXMLLoader(StageManager.class.getResource(viewName+".fxml")).load();
+
+            /*
+            //alternativ
+            FXMLLoader fxmlLoader = new FXMLLoader(StageManager.class.getResource(viewName+".fxml"));
+            Parent root = fxmlLoader.load();
+            ModuleLayer.Controller controller = fxmlLoader.getController();
+            Scene scene1 = new Scene(root);
+            scene1.setFill(Color.TRANSPARENT);
+            //controller.setStage(scene1;
+
+
+             */
+
+
+            page.getStylesheets().add(StageManager.class.getResource("/Style/app.css").toString());
+
+
 
             Stage stage = SM.mainStage;
             Scene currentScene = stage.getScene();
