@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
 public class ModelDB {
 
@@ -41,7 +42,7 @@ public class ModelDB {
                 connection = DriverManager.getConnection("jdbc:sqlite:" + dBName);
                 statement = connection.createStatement();
                 statement.executeUpdate("CREATE TABLE IF NOT EXISTS Film (film_id integer PRIMARY KEY autoincrement, title CHARACTER(20),year integer,elo_rate integer," + "image_id integer, CONSTRAINT unique_film UNIQUE (title,year))");
-                statement.executeUpdate("CREATE TABLE image (ID INT PRIMARY KEY NOT NULL, photo BLOB)");
+                statement.executeUpdate("CREATE TABLE image (ID INT PRIMARY KEY NOT NULL, photo MEDIUMBLOB)");
 
 
 
@@ -117,6 +118,73 @@ public class ModelDB {
             {
                 System.out.println(e);
             }
+        }
+
+        public void TestInsertImage(int filmID,FileInputStream fileInputStream ){
+
+            String query = "INSERT INTO image (id, photo) VALUES(?,?)";
+            try {
+                PreparedStatement pstmt = connection.prepareStatement(query);
+                pstmt.setInt(1,filmID);
+                pstmt.setBinaryStream(2, fileInputStream,fileInputStream.available());
+                pstmt.execute();
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+
+        public Image TestGetImage(int id){
+            String query = "SELECT photo FROM image where ID=? ";
+
+            try {
+                String query2 = "SELECT photo FROM image where ID=2 ";
+                Statement stmt = connection.createStatement();
+                ResultSet rs = stmt.executeQuery(query2);
+                while (rs.next()){
+                    System.out.println("image loaded");
+
+
+                    byte[] imgss = rs.getBytes("photo");
+                    ByteArrayInputStream bis = new ByteArrayInputStream(imgss);
+                    Image image = new Image(bis);
+
+
+                    /*
+                    Blob blob = rs.getBlob("photo");
+                    InputStream inputStream = blob.getBinaryStream();
+                    Image image = new Image(inputStream);
+
+                     */
+                    return image;
+
+                }
+
+                /*
+                PreparedStatement pstmt = connection.prepareStatement(query);
+                pstmt.setInt(1,id);
+                ResultSet rs = pstmt.executeQuery();
+                while (rs.next()){
+                    System.out.println("image loaded");
+                    Blob blob = rs.getBlob("photo");
+                    InputStream inputStream = blob.getBinaryStream();
+                    Image image = new Image(inputStream);
+                    return image;
+
+
+                }
+
+                 */
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+
+            }
+            return null;
+
         }
 
         public void GetImage(){
