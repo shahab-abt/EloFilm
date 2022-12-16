@@ -30,11 +30,11 @@ public class mainMenuController implements Initializable  {
     private TableColumn<Film,Integer> eloId;
 
     ObservableList<Film> list  = FXCollections.observableArrayList(
-            new Film("Padre",1978,0,800),
-            new Film("F2",1989,0,900),
-            new Film("F3",1990,0,1000),
-            new Film("F4",2000,0,1100),
-            new Film("F5",2010,0,700)
+            new Film("Padre",1978,null,800),
+            new Film("F2",1989,null,900),
+            new Film("F3",1990,null,1000),
+            new Film("F4",2000,null,1100),
+            new Film("F5",2010,null,700)
 
     );
 
@@ -49,13 +49,13 @@ public class mainMenuController implements Initializable  {
     //function to navigate from a Button to FilmEntry
     @FXML
     private void OpenAddFilm(ActionEvent event) throws Exception {
-        StageManager.SM.SetScene("FilmEntry", "Add new Film");
+        StageManager.SM.SetCurrentScene("FilmEntry", "Add new Film");
     }
 
     @FXML
     private void OpenViewFilm(ActionEvent event) throws Exception {
         //StageManager.SM.NewScene("ViewFilm", "View saved Films");
-        StageManager.SM.SetScene("TableViewFilmController", "View saved Films");
+        StageManager.SM.SetCurrentScene("TableViewFilmController", "View saved Films");
         /*
         StageManager stage = new StageManager();
         stage.UpdateStage("FilmEnry");
@@ -73,6 +73,6 @@ public class mainMenuController implements Initializable  {
     }
 
     public void OpenMainMenu(ActionEvent actionEvent) throws IOException {
-        StageManager.SM.SetScene("FilmEntry", "Add New Film");
+        StageManager.SM.SetCurrentScene("FilmEntry", "Add New Film");
     }
 }

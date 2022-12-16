@@ -11,8 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
@@ -48,16 +47,22 @@ public class FilmEntryController implements Initializable {
 
     @FXML
     private Button loadBtn;
-    @FXML
-    private Button testView;
+    //@FXML
+    //private Button testView;
+
+    private Image defaultImage;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Current.viewStatic= imageView;
+
         inputTitle.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observableValue, Boolean oldPropertyValue, Boolean newPropertyValue) {
+
+                if (newPropertyValue) imageIsFocused(false);
+                /*
                 if (newPropertyValue)
                 {
 
@@ -71,24 +76,36 @@ public class FilmEntryController implements Initializable {
                     System.out.println("Textfield out focus");
                 }
 
+                 */
+
+            }
+        });
+        inputYear.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean newPropertyValue) {
+                if (newPropertyValue) imageIsFocused(false);
+            }
+        });
+        inputElo.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean newPropertyValue) {
+                if (newPropertyValue) imageIsFocused(false);
             }
         });
 
         //load a default image to assign to imageView
-        File file = new File("sample.png");
-        Image image =new Image(file.toURI().toString());
-        Current.setImage(image);
+        File file = new File("defaultImage.jpg");
+        defaultImage =new Image(file.toURI().toString());
+
+        Current.setImage(defaultImage);
+
         //UpdateImageView(image);
 
         loadBtn.setOnAction(e->browseImage() );
-        testView.setOnAction(e-> ShowImage() );
+        //testView.setOnAction(e-> ShowImage() );
 
     }
 
-
-    public FilmEntryController(){
-
-    }
 
     // would read information
     @FXML
@@ -97,20 +114,21 @@ public class FilmEntryController implements Initializable {
         int year = Integer.parseInt(inputYear.getText());
         int elo = Integer.parseInt(inputElo.getText());
 
-        Film newEntry = new Film(tile, year,0, elo);
+        Film newEntry = new Film(tile, year,Current.image, elo);
+
         ModelDB db = ModelDB.DB.GetModel();
         int filmID = db.InsertFilm(newEntry);
-        db.InsertImage(filmID,Current.image);
+        //db.InsertImage(filmID,Current.image);
 
-        //remove:
-        db.GetAllFilms();
+        EmptyAllFields();
+
     }
 
 
     @FXML
     private void OpenMainMenu(ActionEvent event) throws Exception{
 
-        StageManager.SM.SetScene("mainMenu", "Main Menu");
+        StageManager.SM.SetCurrentScene("mainMenu", "Main Menu");
 
     }
 
@@ -118,12 +136,27 @@ public class FilmEntryController implements Initializable {
         ModelDB db = ModelDB.DB.GetModel();
         Image image = db.TestGetImage(2);
         Current.setImage(image);
-        Current.updateImageView();
+        //Current.updateImageView();
     }
 
     private void browseImage() {
+        //Current.imageEditable =true;
+        imageIsFocused(true);
         FileChooser fileChooser = new FileChooser();
         File file = fileChooser.showOpenDialog(loadBtn.getScene().getWindow());
+        try {
+            FileInputStream fileInputStream = new FileInputStream(file);
+            Image image =new Image(fileInputStream);
+            Current.setImage(image);
+            return;
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+
+        /*
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             ModelDB db = ModelDB.DB.GetModel();
@@ -132,50 +165,50 @@ public class FilmEntryController implements Initializable {
             throw new RuntimeException(e);
         }
 
+         */
+
 
     }
 
-/*
-    @Override
-    public void handle(Event event) {
-        Scene scene = inputTitle.getScene();
-        scene.setOnKeyPressed(e->{
-            if(e.getCode() == KeyCode.A){
-                System.out.println("new scene  A key was pressed");
-
-
-            }
-        });
+    private void EmptyAllFields(){
+        inputTitle.setText("");
+        inputYear.setText("");
+        inputElo.setText("");
+        imageView.setImage(defaultImage);
 
     }
-
- */
-
-
-
-    /* defined in static
-    private void UpdateImageView(Image image){
-        imageView.setImage(image);
-    }
-
-     */
-
-    /* what usage have it??
-    public void MouseClicked(MouseEvent mouseEvent) {
-        System.out.println("mouse click detected");
-    }
-
-     */
 
     public void ImagePaste(KeyEvent keyEvent) {
         System.out.println(keyEvent.getCode());
     }
 
     public void imageClicked(MouseEvent mouseEvent) {
+        imageIsFocused(true);
+        /*
         imageStackPane.getStyleClass().remove(0);
         imageStackPane.getStyleClass().add("imageViewSelected");
 
         imageStackPane.requestFocus();
+
+         */
+
+    }
+
+    private void imageIsFocused(Boolean inFocus){
+        Current.imageEditable =inFocus;
+
+        if(inFocus){
+            imageStackPane.getStyleClass().remove(0);
+            imageStackPane.getStyleClass().add("imageViewSelected");
+            imageStackPane.requestFocus();
+
+        }else{
+            imageStackPane.getStyleClass().remove(0);
+            imageStackPane.getStyleClass().add("imageViewIdle");
+            //System.out.println("Textfield on focus");
+        }
+
+
 
     }
 
@@ -183,17 +216,29 @@ public class FilmEntryController implements Initializable {
     public static class Current {
         private static Image image;
         private static ImageView viewStatic;
+        private static boolean imageEditable =true;
 
         public static void setImage(Image img) {
-            image = img;
+            if (imageEditable){
+                image = img;
+                CropAndResizeImage();
+                updateImageView();
+            }
+
         }
+
 
         public Image getImage() {
             return image;
         }
 
-        public static void updateImageView(){
+        private static void updateImageView(){
             viewStatic.setImage(image);
+        }
+
+        //TODO Crop Image so it would fit to ImageView
+        private static void CropAndResizeImage(){
+
         }
 
 

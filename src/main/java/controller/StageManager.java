@@ -8,9 +8,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.embed.swing.SwingFXUtils;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 public class StageManager extends Application {
@@ -42,7 +46,7 @@ public class StageManager extends Application {
         //update Stage´s Scene with mainMenu Scene
         stage.setScene(scene);
         stage.show();
-        SM.SetScene("mainMenu", "Main Menu");
+        SM.SetCurrentScene("mainMenu", "Main Menu");
 
     }
 
@@ -53,8 +57,9 @@ public class StageManager extends Application {
     public static class SM {
 
         private static Stage mainStage;
+        private static Scene currentScene;
 
-        public static void SetScene(String viewName, String title) throws IOException {
+        public static void SetCurrentScene(String viewName, String title) throws IOException {
 
             //unnecessary??
             //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(viewName+".fxml"));
@@ -78,27 +83,34 @@ public class StageManager extends Application {
 
 
             Stage stage = SM.mainStage;
-            Scene currentScene = stage.getScene();
-            Scene scene = new Scene(page,currentScene.getWidth(),currentScene.getHeight());
+            Scene lastScene = stage.getScene();
+            currentScene = new Scene(page, lastScene.getWidth(), lastScene.getHeight());
+
 
             //TODO should be in separated class not here
             if (viewName=="FilmEntry"){
-
+                RegisterFilmEntryEvents();
+                /*
                 //Assign new EventHandler to scene so it would be possible to capture picture from Clipboard
                 KeyCodeCombination pastKeyCombination = new KeyCodeCombination(KeyCode.V, KeyCombination.SHORTCUT_DOWN);
-                scene.addEventHandler(KeyEvent.KEY_PRESSED, keyEvent -> {
+                currentScene.addEventHandler(KeyEvent.KEY_PRESSED, keyEvent -> {
                     if(pastKeyCombination.match(keyEvent)) {
 
                         Image image = Clipboard.getSystemClipboard().getImage();
                         //new ImageClipboard().SetImage(image);
                         //ImageClipboard.IMG.setImage(image);
                         FilmEntryController.Current.setImage(image);
-                        FilmEntryController.Current.updateImageView();
+                        //FilmEntryController.Current.updateImageView();
                     }
                 });
 
+                 */
+
 
             }
+
+
+
             /*  unnecessary??
             scene.setOnKeyPressed(e->{
                 if(e.getCode() == KeyCode.A){
@@ -111,8 +123,41 @@ public class StageManager extends Application {
 
             // stage will be updated with new Scene
             stage.setTitle(title);
-            stage.setScene(scene);
+            stage.setScene(currentScene);
+            System.out.println("Stage has a new scene");
 
+        }
+        private static void RegisterFilmEntryEvents(){
+            //Assign new EventHandler to scene so it would be possible to capture picture from Clipboard
+            KeyCodeCombination pastKeyCombination = new KeyCodeCombination(KeyCode.V, KeyCombination.SHORTCUT_DOWN);
+            currentScene.addEventHandler(KeyEvent.KEY_PRESSED, keyEvent -> {
+                if(pastKeyCombination.match(keyEvent)) {
+
+                    Image image = Clipboard.getSystemClipboard().getImage();
+                    FilmEntryController.Current.setImage(image);
+
+                    BufferedImage bufferedImage =
+                            new BufferedImage((
+                                    int) image.getWidth(),
+                                    (int) image.getHeight(),
+                                    BufferedImage.TYPE_INT_RGB);
+                    SwingFXUtils.fromFXImage(image,bufferedImage);
+                    File file =new File("Test.jpg");
+                    try {
+                        ImageIO.write(bufferedImage, "jpg",file );
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                }
+            });
+
+        }
+
+
+
+        public static Scene GetCurrentScene(){
+            return currentScene;
         }
     }
 }

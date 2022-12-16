@@ -3,6 +3,7 @@ module com.example.elo {
     requires javafx.fxml;
     requires java.sql;
     requires java.desktop;
+    requires javafx.swing;
 
 
     opens controller to javafx.fxml;

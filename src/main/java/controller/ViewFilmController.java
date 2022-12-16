@@ -267,7 +267,7 @@ public class ViewFilmController {
 
     @FXML
     private void OpenMainMenu(ActionEvent event) throws Exception{
-        StageManager.SM.SetScene("mainMenu", "Main Menu");
+        StageManager.SM.SetCurrentScene("mainMenu", "Main Menu");
     }
 
 
