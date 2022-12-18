@@ -18,6 +18,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,6 +26,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static java.lang.Math.round;
 
 public class FilmEntryController implements Initializable {
     @FXML
@@ -257,35 +260,96 @@ public class FilmEntryController implements Initializable {
 
         //TODO Crop Image so it would fit to ImageView
         private static void CropAndResizeImage(){
+            //target image siz
+            int widthTarget = 300;
+            int heightTarget = 200;
+
+            int width = (int) image.getWidth();
+            int height = (int) image.getHeight();
+
             bufferedImage =
-                    new BufferedImage((
-                            int) image.getWidth(),
-                            (int) image.getHeight(),
+                    new BufferedImage(
+                            width,
+                            height,
                             BufferedImage.TYPE_INT_RGB);
             SwingFXUtils.fromFXImage(image,bufferedImage);
 
-            int width =  (int) image.getWidth();
-            int height = (int) image.getHeight();
-
-            BufferedImage dest =
-                    bufferedImage.getSubimage(0, 0, bufferedImage.getWidth(), bufferedImage.getHeight());
-
-            BufferedImage dest2 =
-                    bufferedImage.getSubimage(
-                            (width/2)-20,
-                            (height/2)-20,
-                            (width/2)+20,
-                            (height/2)+20);
-            //Removable
-            File imageFile = new File("croped.jpg");
+//removable temporal
+            File original = new File("original.jpg");
             try {
-                ImageIO.write(dest2, "jpg",imageFile );
+                ImageIO.write(bufferedImage, "jpg",original );
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-            catch( IOException e){
-                e.printStackTrace();
+//end of removable
+
+
+            //Ratio of width and height of target image to original
+            float widthRatio = (float)  widthTarget/width;
+            float heightRatio = (float) heightTarget/height;
+            float targetAspectRation = (float)widthTarget/heightTarget;
+
+            int newHeightByWR = round(height*widthRatio);
+            int newWidthByHR = round(width*heightRatio);
+
+            int widthGapToTarget =  newWidthByHR - widthTarget;
+            int heightGapToTarget = newHeightByWR - heightTarget;
+
+            //image should be copped first
+            int widthResize;
+            int heightResize;
+
+
+            float choosedRatio;
+            if(widthGapToTarget>=0){
+                //width should be cropped
+                //calculate new width to have same Aspect ratio as imageTarget
+
+                int newWidth =  round(height * (targetAspectRation));
+                bufferedImage = CropOuterEdge( bufferedImage,newWidth, height );
+                choosedRatio = heightRatio;
+            }else{
+                //height should be cropped
+                int newHeight =  round(width * (1/targetAspectRation));
+                bufferedImage = CropOuterEdge( bufferedImage,width, newHeight );
+                choosedRatio = widthRatio;
+            }
+
+//removable temporal
+            File cropped = new File("cropped.jpg");
+            try {
+                ImageIO.write(bufferedImage, "jpg",cropped );
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+//end of removable
+
+
+
+            BufferedImage resizedImage = new BufferedImage(widthTarget,heightTarget, BufferedImage.TYPE_INT_RGB);
+            Graphics2D graphics2D = resizedImage.createGraphics();
+
+            graphics2D.drawImage(bufferedImage, 0, 0, widthTarget, heightTarget, null);
+            graphics2D.dispose();
+
+//removable temporal
+            File resized = new File("resized.jpg");
+            try {
+                ImageIO.write(resizedImage, "jpg",resized );
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+//end of removable
 
             }
-            }
+
+        private static BufferedImage CropOuterEdge(BufferedImage image, int targetWidth, int targetHeight) {
+
+            int x = round( ((float) image.getWidth() - targetWidth) /2);
+            int y = round( ((float) image.getHeight() - targetHeight) /2);
+            return image.getSubimage(x,y,targetWidth,targetHeight);
+
+        }
 
     }
 }
