@@ -4,6 +4,7 @@ import Model.Film;
 import Model.ModelDB;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,9 +17,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -47,10 +51,14 @@ public class FilmEntryController implements Initializable {
 
     @FXML
     private Button loadBtn;
-    //@FXML
-    //private Button testView;
+
 
     private Image defaultImage;
+
+    //Testing Variable
+    @FXML
+    private Button showImage;
+    private int viwCounter = 1;
 
 
     @Override
@@ -102,7 +110,7 @@ public class FilmEntryController implements Initializable {
         //UpdateImageView(image);
 
         loadBtn.setOnAction(e->browseImage() );
-        //testView.setOnAction(e-> ShowImage() );
+        showImage.setOnAction(e-> ShowImage() );
 
     }
 
@@ -132,11 +140,21 @@ public class FilmEntryController implements Initializable {
 
     }
 
+    //This funktion is temporal, just to control if reading from Db works fine
     private void ShowImage(){
+        //can be kept for now maybe there is a usage for this sample code
+        /* OLD
         ModelDB db = ModelDB.DB.GetModel();
         Image image = db.TestGetImage(2);
         Current.setImage(image);
         //Current.updateImageView();
+
+         */
+        ModelDB db = ModelDB.DB.GetModel();
+        Image image = db.getImageById(viwCounter);
+        viwCounter+=1;
+        imageIsFocused(true);
+        Current.setImage(image);
     }
 
     private void browseImage() {
@@ -215,6 +233,7 @@ public class FilmEntryController implements Initializable {
     //Static Class make it possible to manipulate ImageView from another Class
     public static class Current {
         private static Image image;
+        private static BufferedImage bufferedImage;
         private static ImageView viewStatic;
         private static boolean imageEditable =true;
 
@@ -238,9 +257,35 @@ public class FilmEntryController implements Initializable {
 
         //TODO Crop Image so it would fit to ImageView
         private static void CropAndResizeImage(){
+            bufferedImage =
+                    new BufferedImage((
+                            int) image.getWidth(),
+                            (int) image.getHeight(),
+                            BufferedImage.TYPE_INT_RGB);
+            SwingFXUtils.fromFXImage(image,bufferedImage);
 
-        }
+            int width =  (int) image.getWidth();
+            int height = (int) image.getHeight();
 
+            BufferedImage dest =
+                    bufferedImage.getSubimage(0, 0, bufferedImage.getWidth(), bufferedImage.getHeight());
+
+            BufferedImage dest2 =
+                    bufferedImage.getSubimage(
+                            (width/2)-20,
+                            (height/2)-20,
+                            (width/2)+20,
+                            (height/2)+20);
+            //Removable
+            File imageFile = new File("croped.jpg");
+            try {
+                ImageIO.write(dest2, "jpg",imageFile );
+            }
+            catch( IOException e){
+                e.printStackTrace();
+
+            }
+            }
 
     }
 }

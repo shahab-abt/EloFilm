@@ -112,6 +112,25 @@ public class ModelDB {
             }
         }
 
+        public Image getImageById(int id){
+        String query ="SELECT photo from Film where film_id=?";
+            try {
+                PreparedStatement pstmt = connection.prepareStatement(query);
+                pstmt.setInt(1,id);
+                ResultSet rs = pstmt.executeQuery();
+                while (rs.next()){
+                    byte[] img = rs.getBytes(1);
+                    ByteArrayInputStream bis = new ByteArrayInputStream(img);
+                    Image image = new Image(bis);
+                    return image;
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        return null;
+
+        }
+
         public void InsertImage(int filmID, Image image){
 
             try {
