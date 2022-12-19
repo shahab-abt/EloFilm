@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.scene.input.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -107,8 +108,15 @@ public class FilmEntryController implements Initializable {
         //load a default image to assign to imageView
         File file = new File("defaultImage.jpg");
         defaultImage =new Image(file.toURI().toString());
+        BufferedImage bufferedImage =
+                new BufferedImage((
+                        int) defaultImage.getWidth(),
+                        (int) defaultImage.getHeight(),
+                        BufferedImage.TYPE_INT_RGB);
+        //Current.image = defaultImage;
+        SwingFXUtils.fromFXImage(defaultImage,bufferedImage);
 
-        Current.setImage(defaultImage);
+        Current.setImage(bufferedImage);
 
         //UpdateImageView(image);
 
@@ -125,7 +133,7 @@ public class FilmEntryController implements Initializable {
         int year = Integer.parseInt(inputYear.getText());
         int elo = Integer.parseInt(inputElo.getText());
 
-        Film newEntry = new Film(tile, year,Current.image, elo);
+        Film newEntry = new Film(tile, year,Current.getImage(), elo);
 
         ModelDB db = ModelDB.DB.GetModel();
         int filmID = db.InsertFilm(newEntry);
@@ -157,7 +165,15 @@ public class FilmEntryController implements Initializable {
         Image image = db.getImageById(viwCounter);
         viwCounter+=1;
         imageIsFocused(true);
-        Current.setImage(image);
+
+        BufferedImage bufferedImage =
+                new BufferedImage((
+                        int) image.getWidth(),
+                        (int) image.getHeight(),
+                        BufferedImage.TYPE_INT_RGB);
+        SwingFXUtils.fromFXImage(image,bufferedImage);
+
+        Current.setImage(bufferedImage);
     }
 
     private void browseImage() {
@@ -168,7 +184,15 @@ public class FilmEntryController implements Initializable {
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             Image image =new Image(fileInputStream);
-            Current.setImage(image);
+            BufferedImage bufferedImage =
+                    new BufferedImage((
+                            int) image.getWidth(),
+                            (int) image.getHeight(),
+                            BufferedImage.TYPE_INT_RGB);
+            SwingFXUtils.fromFXImage(image,bufferedImage);
+
+
+            Current.setImage(bufferedImage);
             return;
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -234,46 +258,53 @@ public class FilmEntryController implements Initializable {
     }
 
     //Static Class make it possible to manipulate ImageView from another Class
+    //TODO: transfer this class to a separate Class to manage ImageView
     public static class Current {
-        private static Image image;
+        //private static Image image;
         private static BufferedImage bufferedImage;
         private static ImageView viewStatic;
         private static boolean imageEditable =true;
 
-        public static void setImage(Image img) {
+        public static void setImage(BufferedImage img) {
             if (imageEditable){
-                image = img;
+                bufferedImage = img;
                 CropAndResizeImage();
-                updateImageView();
+                //updateImageView();
             }
 
         }
 
 
-        public Image getImage() {
-            return image;
+        public static Image getImage() {
+            return  SwingFXUtils.toFXImage(bufferedImage, null);
         }
 
         private static void updateImageView(){
+
+            //Image newImage =  new Image(image.getUrl());
+
+            //SwingFXUtils.fromFXImage(image,bufferedImage);
+            Image image = SwingFXUtils.toFXImage(bufferedImage, null);
             viewStatic.setImage(image);
         }
 
-        //TODO Crop Image so it would fit to ImageView
         private static void CropAndResizeImage(){
             //target image siz
-            int widthTarget = 300;
-            int heightTarget = 200;
+            int widthTarget = 200;
+            int heightTarget = 150;
 
-            int width = (int) image.getWidth();
-            int height = (int) image.getHeight();
-
+            //int width = (int) image.getWidth();
+            //int height = (int) image.getHeight();
+            int width = (int) bufferedImage.getWidth();
+            int height = (int) bufferedImage.getHeight();
+            /*
             bufferedImage =
                     new BufferedImage(
                             width,
                             height,
                             BufferedImage.TYPE_INT_RGB);
             SwingFXUtils.fromFXImage(image,bufferedImage);
-
+            */
 //removable temporal
             File original = new File("original.jpg");
             try {
@@ -340,7 +371,8 @@ public class FilmEntryController implements Initializable {
                 throw new RuntimeException(e);
             }
 //end of removable
-
+            bufferedImage = resizedImage;
+            updateImageView();
             }
 
         private static BufferedImage CropOuterEdge(BufferedImage image, int targetWidth, int targetHeight) {

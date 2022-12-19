@@ -134,7 +134,7 @@ public class StageManager extends Application {
                 if(pastKeyCombination.match(keyEvent)) {
 
                     Image image = Clipboard.getSystemClipboard().getImage();
-                    FilmEntryController.Current.setImage(image);
+
 
                     BufferedImage bufferedImage =
                             new BufferedImage((
@@ -142,6 +142,7 @@ public class StageManager extends Application {
                                     (int) image.getHeight(),
                                     BufferedImage.TYPE_INT_RGB);
                     SwingFXUtils.fromFXImage(image,bufferedImage);
+                    FilmEntryController.Current.setImage(bufferedImage);
                     File file =new File("Test.jpg");
                     try {
                         ImageIO.write(bufferedImage, "jpg",file );

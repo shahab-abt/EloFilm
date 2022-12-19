@@ -16,7 +16,7 @@
       <Button fx:id="showImage" layoutX="450.0" layoutY="351.0" mnemonicParsing="false" text="Show Image" />
 
 
-      <Pane fx:id="imageStackPane" layoutX="300.0" layoutY="201.0" onMouseClicked="#imageClicked" prefHeight="150.0" prefWidth="200.0" styleClass="imageViewIdle">
+      <Pane fx:id="imageStackPane" layoutX="300.0" layoutY="200.0" onMouseClicked="#imageClicked" prefHeight="150.0" prefWidth="200.0" styleClass="imageViewIdle">
          <children>
             <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children></Pane>
