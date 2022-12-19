@@ -1,21 +1,25 @@
 package Model;
+
+import javafx.scene.image.Image;
+
 public class Film {
     private String title;
-    private int year, film_id, image_id, eloRate;
+    private int year, film_id,  eloRate;
+    private  Image image;
 
     //Create a new Object
-    public Film(String title, int year, int image_id,int eloRate){
+    public Film(String title, int year, Image image, int eloRate){
         this.film_id = 0;
         this.title =title;
         this.year= year;
-        this.image_id =image_id;
+        this.image =image;
         this.eloRate=eloRate;
     }
-    public Film(int id,  String title, int year, int image_id,int eloRate){
+    public Film(int id,  String title, int year, Image image,int eloRate){
         this.film_id = id;
         this.title =title;
         this.year= year;
-        this.image_id =image_id;
+        this.image =image;
         this.eloRate=eloRate;
 
     }
@@ -40,16 +44,16 @@ public class Film {
         this.film_id = film_id;
     }
 
-    public int getImage_id() {
-        return image_id;
-    }
-
-    public void setImage_id(int image_id) {
-        this.image_id = image_id;
-    }
-
     public int getEloRate() {
         return eloRate;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     public void setEloRate(int eloRate) {
