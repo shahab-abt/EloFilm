@@ -6,8 +6,8 @@ module com.example.elo {
     requires javafx.swing;
 
 
-    opens controller to javafx.fxml;
-    exports controller;
+    opens Elo to javafx.fxml;
+    exports Elo;
     exports Model;
     opens Model to javafx.fxml;
 }

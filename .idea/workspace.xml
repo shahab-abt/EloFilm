@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="problems by inserting new images in FilmEntryController is solved. but it's not clean at all.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ImageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqlDataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FilmEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/FilmEntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/StageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/ViewFilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/mainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/mainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/FilmEntry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/FilmEntry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/ViewFilm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/ViewFilm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/mainMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MiroWireFrame" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,11 +74,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;/home/shahab/Proj/ELOFILM/ELO/src/main/java/com/example/elo&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/GitHub/Programing_X/EloFilm/javafx.embed.swing.JFXPanel/javafx-swing-20-ea+11.jar&quot;,
+    &quot;last_directory_selection&quot;: &quot;F:/GitHub/Programing_X/EloFilm/src/main/java/Elo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/GitHub/Programing_X/EloFilm/sqlite-jdbc-3.36.0.3.jar&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.42643678&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
@@ -91,7 +102,20 @@
       <recent name="$PROJECT_DIR$/src/main/java/fxml" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.controller.StageManager">
+  <component name="RunManager" selected="Application.Elo.StageManager">
+    <configuration name="Elo.StageManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Elo.StageManager" />
+      <module name="ELO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Elo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.elo.HelloApplication" />
       <module name="ELO" />
@@ -110,20 +134,7 @@
       <module name="ELO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="controller.StageManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.StageManager" />
-      <module name="EloFilm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="Elo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,7 +144,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.controller.StageManager" />
+        <item itemvalue="Application.Elo.StageManager" />
         <item itemvalue="Application.controller.HelloApplication" />
         <item itemvalue="Application.HelloApplication" />
       </list>
@@ -151,6 +162,9 @@
       <workItem from="1671013954606" duration="23911000" />
       <workItem from="1671181130719" duration="16888000" />
       <workItem from="1671390581615" duration="14083000" />
+      <workItem from="1671476717802" duration="2809000" />
+      <workItem from="1671548691338" duration="23509000" />
+      <workItem from="1672071959986" duration="7014000" />
     </task>
     <task id="LOCAL-00001" summary="EloProject created">
       <created>1664525519125</created>
@@ -335,12 +349,12 @@
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/ViewFilmController.java</url>
           <line>53</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/ViewFilmController.java</url>
           <line>282</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
@@ -350,59 +364,59 @@
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/ViewFilmController.java</url>
           <line>229</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>50</line>
+          <line>72</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
-          <line>97</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
+          <line>103</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>174</line>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>161</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>181</line>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>180</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>199</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>212</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>60</line>
+          <line>82</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>117</line>
+          <line>120</line>
           <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="144" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

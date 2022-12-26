@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainMenuController">
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Elo.mainMenuController">
    <children>
 
    </children>
@@ -32,11 +32,12 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <Button mnemonicParsing="false" text="Add new Film" fx:id="btnMainMenu" onAction="#OpenMainMenu"  />
+                  <Button fx:id="btnMainMenu" mnemonicParsing="false" onAction="#OpenMainMenu" text="Add new Film" />
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
+                  <Button fx:id="btnMovieList" mnemonicParsing="false" onAction="#OpenMovieList" text="MovieList" />
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                </children>

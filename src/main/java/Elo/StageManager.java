@@ -1,4 +1,4 @@
-package controller;
+package Elo;
 
 
 import Model.ModelDB;
@@ -9,12 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.*;
 import javafx.stage.Stage;
-import javafx.embed.swing.SwingFXUtils;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 public class StageManager extends Application {
@@ -26,7 +21,7 @@ public class StageManager extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         //temporal Code to check how save image into Database
-        ModelDB db = new ModelDB("t1.db");
+        ModelDB db = new ModelDB("DB.db");
         //db.InsertImage();
         //db.GetImage();
         //
@@ -61,18 +56,24 @@ public class StageManager extends Application {
 
         public static void SetCurrentScene(String viewName, String title) throws IOException {
 
+            //Parent page = (Parent) new FXMLLoader(StageManager.class.getResource(viewName+".fxml")).load();
             //unnecessary??
             //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(viewName+".fxml"));
-            Parent page = (Parent) new FXMLLoader(StageManager.class.getResource(viewName+".fxml")).load();
 
+            //FXMLLoader fxmlLoader2 = new FXMLLoader(StageManager.class.getResource("FilmEntry.fxml"));
+            //FXMLLoader fxmlLoader3 = new FXMLLoader(StageManager.class.getResource("MovieList.fxml"));
+            //FXMLLoader fxmlLoader = new FXMLLoader(StageManager.class.getResource(viewName+".fxml"));
+
+            //Parent page = (Parent) new FXMLLoader(StageManager.class.getResource("mainManu.fxml")).load();
+            Parent page = (Parent) new FXMLLoader(StageManager.class.getResource(viewName+".fxml")).load();
             /*
             //alternativ
             FXMLLoader fxmlLoader = new FXMLLoader(StageManager.class.getResource(viewName+".fxml"));
             Parent root = fxmlLoader.load();
-            ModuleLayer.Controller controller = fxmlLoader.getController();
+            ModuleLayer.Controller Elo = fxmlLoader.getController();
             Scene scene1 = new Scene(root);
             scene1.setFill(Color.TRANSPARENT);
-            //controller.setStage(scene1;
+            //Elo.setStage(scene1;
 
 
              */
