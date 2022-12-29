@@ -55,6 +55,14 @@ public class MovieList implements Initializable {
         listOutput.add("t1");
         listOutput.add("t2");
         viewable.setItems(listOutput);
+        viewable.setVisible(false);
+
+        viewable.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                System.out.println(s+" "+t1);
+            }
+        });
 
     }
 
@@ -102,15 +110,23 @@ public class MovieList implements Initializable {
         }
         searchCombo.getItems().clear();
 
+
         int before = searchCombo.getItems().size();
         if (before >0){
             int a=5;
         }
-
+        listOutput.clear();
 
 
         for (String s: foundTitles){
             searchCombo.getItems().add(s);
+            listOutput.add(s);
+        }
+        if (foundTitles.size()<1)
+        {
+            viewable.setVisible(false);
+        }else {
+            viewable.setVisible(true);
         }
         int after = searchCombo.getItems().size();
         searchCombo.show();

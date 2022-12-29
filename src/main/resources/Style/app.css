@@ -8,6 +8,9 @@
     -fx-border-color:darkblue;
     -fx-border-width:10px;
 }
+.stackPane{
+    -fx-background-color: white;
+}
 
 
 .im{

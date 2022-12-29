@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Elo.FilmEntryController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Elo.FilmEntryController">
    <children>
       <Label layoutX="200.0" layoutY="60.0" prefWidth="100.0" text="Title:" />
       <TextField fx:id="inputTitle" layoutX="400.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" />

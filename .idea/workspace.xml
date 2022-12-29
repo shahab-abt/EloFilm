@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="backup Commit" />
+    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="backup Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/MovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/MovieList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/StageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/FilmEntry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/FilmEntry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/MovieList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/MovieList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/mainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/app.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +158,8 @@
       <workItem from="1671476717802" duration="2809000" />
       <workItem from="1671548691338" duration="23509000" />
       <workItem from="1672071959986" duration="7014000" />
-      <workItem from="1672091090083" duration="385000" />
+      <workItem from="1672091090083" duration="8840000" />
+      <workItem from="1672341825151" duration="958000" />
     </task>
     <task id="LOCAL-00001" summary="EloProject created">
       <created>1664525519125</created>
@@ -256,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672091337460</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="backup Commit">
+      <created>1672091494190</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1672091494190</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,12 +420,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
-          <line>118</line>
+          <line>134</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
-          <line>106</line>
+          <line>115</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
       </breakpoints>

@@ -27,7 +27,7 @@ public class StageManager extends Application {
         //
 
         //Stage will be loaded in full size
-        stage.setMaximized(true);
+        //stage.setMaximized(true);
         //assign loading Stage in static mainStage
         SM.mainStage=stage;
 
@@ -36,7 +36,7 @@ public class StageManager extends Application {
 
         //create mainMenu Scene
         FXMLLoader fxmlLoader = new FXMLLoader(StageManager.class.getResource("mainMenu.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load(),1920,1080);
 
         //update Stage´s Scene with mainMenu Scene
         stage.setScene(scene);
