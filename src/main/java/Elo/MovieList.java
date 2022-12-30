@@ -10,8 +10,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.*;
@@ -20,15 +22,23 @@ import java.util.function.Predicate;
 
 public class MovieList implements Initializable {
 
+    //Selected Movie Displaying nodes
     @FXML
-    ListView<String> viewable;
+    ImageView selectedFilmImage;
+    @FXML
+    Label selectedFilmTitle;
+    @FXML
+    Label selectedFilmYear;
+    @FXML
+    ListView<Film> viewable;
     @FXML
     TextField searchText;
-    @FXML
-    ComboBox searchCombo;
+
+    // @FXML
+    //ComboBox searchCombo;
     private List<Film> allFilm;
     private  List<String> filmTitles= new ArrayList<>();
-    private ObservableList<String> listOutput = FXCollections.observableArrayList();
+    private ObservableList<Film> listOutput = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,17 +62,19 @@ public class MovieList implements Initializable {
             //System.out.println("textfield changed from " + oldValue + " to " + newValue);
         });
 
-        listOutput.add("t1");
-        listOutput.add("t2");
+        //listOutput.add("t1");
+        //listOutput.add("t2");
         viewable.setItems(listOutput);
+        viewable.setPrefHeight(175.0);
         viewable.setVisible(false);
 
-        viewable.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        viewable.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Film>() {
             @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                System.out.println(s+" "+t1);
+            public void changed(ObservableValue<? extends Film> observableValue, Film film, Film t1) {
+                MovieIsSelected(t1);
             }
         });
+
 
     }
 
@@ -90,51 +102,69 @@ public class MovieList implements Initializable {
     }
 
     private void searchForTitles(String inputStr){
-        List<String> foundTitles= new ArrayList<>();
+
+        List<Film> foundFilm= new ArrayList<>();
         //String[] inputArr = .split(" ");
         String[] inputArr = SplitAndLowercase(inputStr);
 
-        for (String title:filmTitles) {
+        for (Film film:allFilm) {
             boolean isMatch =false;
-            //String[] titleArr = title.split(" ");
-            String[] titleArr = SplitAndLowercase(title);
+            //String[] titleArr = film.split(" ");
+
+            //create a StringArray off all Words in Film Titel
+            String[] titleArr = SplitAndLowercase(film.toString());
             for (String wrd:inputArr) {
                 Predicate<String> word = s -> s.startsWith(wrd);
                 if(Arrays.stream(titleArr).anyMatch(word)){
-                    System.out.println(wrd+"-"+title);
+                    System.out.println(wrd+"-"+film.toString());
                     isMatch =true;
                     break;
                 }
             }
-            if (isMatch) foundTitles.add(title);
+            if (isMatch) foundFilm.add(film);
         }
-        searchCombo.getItems().clear();
+        //searchCombo.getItems().clear();
 
-
-        int before = searchCombo.getItems().size();
+//??
+        /*
+      int before = searchCombo.getItems().size();
         if (before >0){
             int a=5;
         }
+
+         */
         listOutput.clear();
 
 
-        for (String s: foundTitles){
-            searchCombo.getItems().add(s);
-            listOutput.add(s);
+        for (Film film: foundFilm){
+            //searchCombo.getItems().add(s);
+            listOutput.add (film);
         }
-        if (foundTitles.size()<1)
+        if (foundFilm.size()<1)
         {
             viewable.setVisible(false);
         }else {
             viewable.setVisible(true);
         }
-        int after = searchCombo.getItems().size();
-        searchCombo.show();
-        System.out.println(before+" "+after);
+        //int after = searchCombo.getItems().size();
+        //searchCombo.show();
+        //System.out.println(before+" "+after);
 
         //foundTitles
     }
 
+    private void MovieIsSelected(Film film){
+        if (film==null){
+            System.out.println("GOT NULL for selected Film");
+            return;
+        }
+
+        selectedFilmTitle.setText(film.getTitle());
+        selectedFilmYear.setText(String.valueOf(film.getYear()));
+        selectedFilmImage.setImage(film.getImage());
+        viewable.setVisible(false);
+
+    }
     private String[] SplitAndLowercase(String s){
         String[] returnValue = s.split(" ");
         for (int i = 0; i < returnValue.length; i++) {

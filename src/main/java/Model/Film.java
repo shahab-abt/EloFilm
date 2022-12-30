@@ -63,4 +63,9 @@ public class Film {
     public int getFilm_id() {
         return film_id;
     }
+
+    @Override
+    public String toString() {
+        return (this.title+"( "+this.year+" )");
+    }
 }

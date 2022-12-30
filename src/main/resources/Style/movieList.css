@@ -1,0 +1,32 @@
+.label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.movieList {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+.SelectedMovie{
+    -fx-background-color: white;
+}
+
+#selectedFilmTitle{
+    -fx-font-weight: bold;
+    -fx-font-size: 25;
+    -fx-alignment:center
+}
+
+#imageBox{
+    -fx-border-width: 1;
+    -fx-border-color: #3e3e3e;
+    -fx-background-color: #cccccc;
+
+}
+.label{
+    -fx-alignment:center
+}
