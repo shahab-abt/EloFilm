@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -13,7 +14,7 @@
                <children>
                   <Button layoutX="269.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="250.0" text="Button" />
                   <ComboBox layoutX="358.0" layoutY="100.0" prefHeight="25.0" prefWidth="72.0" />
-                  <Label  fx:id="selectedFilmTitle" layoutX="269.0" layoutY="25.0" prefHeight="17.0" prefWidth="250.0" text="Titel" />
+                  <Label fx:id="selectedFilmTitle" layoutX="269.0" layoutY="25.0" prefHeight="17.0" prefWidth="250.0" text="Titel" />
 
                   <Label fx:id="selectedFilmYear" layoutX="269.0" layoutY="76.0" prefHeight="17.0" prefWidth="250.0" text="year" />
                   <Pane id="imageBox" layoutX="24.0" layoutY="25.0" prefHeight="150.0" prefWidth="200.0">
@@ -24,10 +25,22 @@
                </children></AnchorPane>
             <ListView fx:id="viewable" layoutX="301.0" layoutY="50.0" prefHeight="1.0" prefWidth="200.0" />
          </children></AnchorPane>
+      <ListView fx:id="userFilms" layoutX="360.0" layoutY="502.0" prefHeight="491.0" prefWidth="1200.0" />
+      <HBox layoutX="360.0" layoutY="330.0" prefHeight="170.0" prefWidth="1200.0">
+         <children>
+            <ImageView fx:id="selectedFilmImage1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
 
-
-      <Label layoutX="456.0" layoutY="415.0" prefHeight="17.0" prefWidth="80.0" text="Label">
-      </Label>
-      <Button layoutX="449.0" layoutY="444.0" mnemonicParsing="false" text="Button" />
+            <VBox prefHeight="200.0" prefWidth="800.0">
+               <children>
+                  <Label text="Label" prefHeight="100.0"  />
+                  <Label text="Label"  prefHeight="100.0" />
+               </children>
+            </VBox>
+            <Label prefHeight="200.0" prefWidth="200.0" text="Label" />
+         </children></HBox>
    </children>
 </AnchorPane>
