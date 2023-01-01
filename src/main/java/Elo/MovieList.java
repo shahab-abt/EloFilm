@@ -10,9 +10,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.util.*;
@@ -28,8 +31,14 @@ public class MovieList implements Initializable {
     Label selectedFilmTitle;
     @FXML
     Label selectedFilmYear;
+    @FXML
+    ComboBox<Integer> selectedRating;
+    @FXML
+    Button addFilmBtn;
 
     //
+    @FXML
+    AnchorPane mainAnchorPane;
     @FXML
     ListView<Film> userFilms;
     @FXML
@@ -44,12 +53,32 @@ public class MovieList implements Initializable {
     private ObservableList<Film> listOutput = FXCollections.observableArrayList();
 
     private ObservableList<Film> addedFilm = FXCollections.observableArrayList();
+    //private String ratingOptions[] = {"1","2","3","4","5","6","7","8","9","10"} ;
+    private Integer ratingOptions[] ={1,2,3,4,5,6,7,8,9,10};
+    private int selectedRate=0;
+    private Film currentSelectedFilm;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ModelDB db = ModelDB.DB.GetModel();
         allFilm = db.GetAllFilms();
         setUpFilmTitles();
+
+        selectedRating.setItems(FXCollections.observableArrayList(ratingOptions));
+        selectedRating.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
+            @Override
+            public void changed(ObservableValue<? extends Integer> observableValue, Integer integer, Integer t1) {
+                selectedRate=t1;
+            }
+        });
+
+        addFilmBtn.setOnAction(event -> {
+            Film film = currentSelectedFilm;
+            film.setEloRate(selectedRate*200);
+            addedFilm.add(film);
+            userFilms.refresh();
+
+        });
 
         searchText.textProperty().addListener((observable, oldValue, newValue) -> {
             searchForTitles(newValue);
@@ -71,30 +100,59 @@ public class MovieList implements Initializable {
             @Override
             protected void updateItem(Film film, boolean empty) {
                 super.updateItem(film, empty);
+
+                //Scene currentScene = selectedFilmTitle.getScene();
+                //ObservableList stylSheet = currentScene.getStylesheets();
+                //ObservableList stylSheet2= mainAnchorPane.getStylesheets();
+
                 if (empty) {
                     setGraphic(null);
                 } else {
 
                     // Create a HBox to hold our displayed value
-                    HBox hBox = new HBox(5);
-                    hBox.setAlignment(Pos.CENTER);
+                    HBox movieBox = new HBox();
+                    movieBox.setPrefHeight(160);
+                    movieBox.setPrefWidth(-1);
 
-                    // hBox objects
-                    ImageView imv = new ImageView();
-                    imv.setImage(film.getImage());
-                    Label filmTitle = new Label(film.getTitle());
-                    filmTitle.getStyleClass().add("selectedFilmTitle");
+                    movieBox.getStyleClass().add("movieBox");
+                    //movieBox.setAlignment(Pos.CENTER);
+                    //movieBox.getStylesheets().addAll(mainAnchorPane.getStylesheets());
+                    //movieBox children
+
+                        ImageView imv = new ImageView();
+                        imv.setImage(film.getImage());
+                        imv.setFitHeight(150);
+                        imv.setFitWidth(200);
+
+                        VBox movieInfo = new VBox();
+                        movieInfo.setPrefHeight(160);
+                        movieInfo.setPrefWidth(800);
+                        //vBox children
+                            Label filmTitle = new Label(film.getTitle());
+                            filmTitle.setPrefHeight(40);
+                            filmTitle.getStyleClass().add("filmTitle");
+                            Label filmYear = new Label(String.valueOf(film.getYear()));
+                            filmYear.getStyleClass().add("filmYear");
+                            filmYear.setPrefHeight(10);
+                        movieInfo.getChildren().addAll(filmTitle,filmYear);
+                        Label eloRank = new Label(String.valueOf( film.getEloRate()));
+                        eloRank.getStyleClass().add("filmRate");
+                    movieBox.getChildren().addAll(imv,movieInfo,eloRank);
+
 
 
 
                     //Add Value
-                    hBox.getChildren().addAll(
+                    /*
+                    movieBox.getChildren().addAll(
                             new ImageView(film.getImage()),
                             new Label(film.getTitle()),
                             new Label (String.valueOf(film.getYear()))
                     );
 
-                    setGraphic(hBox);
+                     */
+
+                    setGraphic(movieBox);
                 }
 
             }
@@ -185,14 +243,13 @@ public class MovieList implements Initializable {
             System.out.println("GOT NULL for selected Film");
             return;
         }
-
+        currentSelectedFilm=film;
         selectedFilmTitle.setText(film.getTitle());
         selectedFilmYear.setText(String.valueOf(film.getYear()));
         selectedFilmImage.setImage(film.getImage());
         viewable.setVisible(false);
 
-        addedFilm.add(film);
-        userFilms.refresh();
+
 
     }
     private String[] SplitAndLowercase(String s){

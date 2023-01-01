@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="new CSS File is created for MovieList&#10;in MovieList is it possible to search and select a movie from DB and see its image, Title, year&#10;in future it would be possible to give a rate to this select Movie and assign it t user selected Film">
+    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="selected movie will be added to a new ViewList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Elo/MovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/MovieList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/MovieList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/MovieList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Style/movieList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/movieList.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +161,8 @@
       <workItem from="1672401453900" duration="3605000" />
       <workItem from="1672415602699" duration="1560000" />
       <workItem from="1672420295435" duration="2269000" />
-      <workItem from="1672424529073" duration="4879000" />
+      <workItem from="1672424529073" duration="10496000" />
+      <workItem from="1672571173137" duration="3015000" />
     </task>
     <task id="LOCAL-00001" summary="EloProject created">
       <created>1664525519125</created>
@@ -288,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672421514604</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="selected movie will be added to a new ViewList">
+      <created>1672509379275</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1672509379275</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +338,8 @@
     <MESSAGE value="backup Commit" />
     <MESSAGE value="movieList: textField with suggestion from DB" />
     <MESSAGE value="new CSS File is created for MovieList&#10;in MovieList is it possible to search and select a movie from DB and see its image, Title, year&#10;in future it would be possible to give a rate to this select Movie and assign it t user selected Film" />
-    <option name="LAST_COMMIT_MESSAGE" value="new CSS File is created for MovieList&#10;in MovieList is it possible to search and select a movie from DB and see its image, Title, year&#10;in future it would be possible to give a rate to this select Movie and assign it t user selected Film" />
+    <MESSAGE value="selected movie will be added to a new ViewList" />
+    <option name="LAST_COMMIT_MESSAGE" value="selected movie will be added to a new ViewList" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -431,13 +441,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
-          <line>179</line>
+          <line>236</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
-          <line>158</line>
+          <line>215</line>
           <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="147" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

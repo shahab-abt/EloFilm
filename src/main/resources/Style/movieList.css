@@ -1,25 +1,8 @@
-.label {
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #333333;
-    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
-}
 
-.movieList {
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #333333;
-    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
-}
 .SelectedMovie{
     -fx-background-color: white;
 }
 
-#selectedFilmTitle{
-    -fx-font-weight: bold;
-    -fx-font-size: 25;
-
-}
 
 #imageBox{
     -fx-border-width: 1;
@@ -29,4 +12,27 @@
 }
 .label{
     -fx-alignment:center
+}
+
+.filmTitle{
+    -fx-font-weight: bold;
+    -fx-font-size: 27;
+
+    -fx-effect: dropshadow( gaussian , rgba(119, 119, 119,0.8), 0,0,1,1);
+}
+
+.filmYear{
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-effect: dropshadow( gaussian , rgba(119, 119, 119,0.2), 0,0,1,1);
+}
+
+.movieBox{
+    -fx-background-color: rgba(80, 104, 121, 0.41);
+    -fx-padding: 0px;
+}
+
+.filmRate{
+    -fx-font-weight: bold;
+    -fx-font-size: 25;
 }
