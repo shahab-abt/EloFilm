@@ -10,7 +10,7 @@
       <AnchorPane layoutX="559.0" layoutY="63.0" prefHeight="286.0" prefWidth="801.0">
          <children>
             <TextField fx:id="searchText" layoutX="301.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0" />
-            <AnchorPane layoutX="132.0" layoutY="51.0" prefHeight="200.0" prefWidth="537.0" styleClass="SelectedMovie">
+            <AnchorPane fx:id="selectedAnchor" layoutX="132.0" layoutY="51.0" prefHeight="200.0" prefWidth="537.0" styleClass="SelectedMovie">
                <children>
                   <Button fx:id="addFilmBtn" layoutX="269.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="250.0" text="Add Film" />
                   <ComboBox fx:id="selectedRating" layoutX="358.0" layoutY="100.0" prefHeight="25.0" prefWidth="72.0" />
@@ -24,6 +24,7 @@
 
                </children></AnchorPane>
             <ListView fx:id="viewable" layoutX="301.0" layoutY="50.0" prefHeight="1.0" prefWidth="200.0" />
+            <Button mnemonicParsing="false" text="Create New Film" />
          </children></AnchorPane>
       <ListView fx:id="userFilms" layoutX="360.0" layoutY="502.0" prefHeight="491.0" prefWidth="1200.0" />
       <HBox layoutX="360.0" layoutY="330.0" prefHeight="170.0" prefWidth="1200.0">

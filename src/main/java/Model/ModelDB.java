@@ -2,19 +2,14 @@ package Model;
 
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
-import javafx.scene.image.PixelFormat;
-import javafx.scene.image.PixelReader;
-import javafx.scene.image.WritablePixelFormat;
 
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.nio.ByteBuffer;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import javax.swing.*;
 
 public class ModelDB {
 
@@ -167,6 +162,49 @@ public class ModelDB {
             return null;
             }
         }
+
+    public void GiveFilmRank(int userID,int filmID, int eloRank){
+            String query = "insert into Ranking values (?,?,?);";
+        try {
+            PreparedStatement stmt =  connection.prepareStatement(query);
+            stmt.setInt(1,filmID);
+            stmt.setInt(2,userID);
+            stmt.setInt(3,eloRank);
+            stmt.execute();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Film> GetAllMovieUser(int userID){
+        List<Film> returnValue = new ArrayList<>();
+            String query =
+                    "select Film.film_id,Film.title,Film.year,Film.photo, Ranking.elo_rate " +
+                    "from Film inner join Ranking  " +
+                    "on Film.film_id = Ranking.film_id where Ranking.user_id =?";
+
+
+            try{
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setInt(1,userID);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+                int film_id = rs.getInt("film_id");
+                int eloRate = rs.getInt("elo_rate");
+                String title= rs.getString("title");
+                int year = rs.getInt("year");
+                byte[] img = rs.getBytes("photo");
+                ByteArrayInputStream bis = new ByteArrayInputStream(img);
+                Image image = new Image(bis);
+                returnValue.add(new Film(film_id,title,year,image, eloRate));
+            }
+
+            }catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            return returnValue;
+    }
 
 
 

@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="selected movie will be added to a new ViewList">
+    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="searched movie can be rated and after that can be added to user viewList&#10;this information should be stored in Database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Elo/MovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/MovieList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/MovieList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/MovieList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/movieList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/movieList.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +76,9 @@
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;sqlite&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;SQLite&quot;
     ]
   }
 }</component>
@@ -162,7 +164,9 @@
       <workItem from="1672415602699" duration="1560000" />
       <workItem from="1672420295435" duration="2269000" />
       <workItem from="1672424529073" duration="10496000" />
-      <workItem from="1672571173137" duration="3015000" />
+      <workItem from="1672571173137" duration="10849000" />
+      <workItem from="1672742904949" duration="2119000" />
+      <workItem from="1674412472041" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="EloProject created">
       <created>1664525519125</created>
@@ -297,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672509379275</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="searched movie can be rated and after that can be added to user viewList&#10;this information should be stored in Database">
+      <created>1672595745221</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1672595745221</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +350,8 @@
     <MESSAGE value="movieList: textField with suggestion from DB" />
     <MESSAGE value="new CSS File is created for MovieList&#10;in MovieList is it possible to search and select a movie from DB and see its image, Title, year&#10;in future it would be possible to give a rate to this select Movie and assign it t user selected Film" />
     <MESSAGE value="selected movie will be added to a new ViewList" />
-    <option name="LAST_COMMIT_MESSAGE" value="selected movie will be added to a new ViewList" />
+    <MESSAGE value="searched movie can be rated and after that can be added to user viewList&#10;this information should be stored in Database" />
+    <option name="LAST_COMMIT_MESSAGE" value="searched movie can be rated and after that can be added to user viewList&#10;this information should be stored in Database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -401,7 +413,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>72</line>
+          <line>67</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -411,12 +423,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>82</line>
+          <line>77</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>120</line>
+          <line>115</line>
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -441,17 +453,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
-          <line>236</line>
+          <line>255</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
-          <line>215</line>
+          <line>234</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
-          <line>116</line>
+          <line>125</line>
           <option name="timeStamp" value="147" />
         </line-breakpoint>
       </breakpoints>

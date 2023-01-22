@@ -9,8 +9,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -35,6 +33,8 @@ public class MovieList implements Initializable {
     ComboBox<Integer> selectedRating;
     @FXML
     Button addFilmBtn;
+    @FXML
+    AnchorPane selectedAnchor;
 
     //
     @FXML
@@ -72,11 +72,19 @@ public class MovieList implements Initializable {
             }
         });
 
+        //add an existing Film to user Database
         addFilmBtn.setOnAction(event -> {
             Film film = currentSelectedFilm;
-            film.setEloRate(selectedRate*200);
+            int eloRank=selectedRate*200;
+
+            film.setEloRate(eloRank);
+            ModelDB.DB.GetModel().GiveFilmRank(1,film.getFilm_id(),eloRank);
+            UpdateUserFilm();
+            /*
             addedFilm.add(film);
             userFilms.refresh();
+
+             */
 
         });
 
@@ -93,6 +101,7 @@ public class MovieList implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Film> observableValue, Film film, Film t1) {
                 MovieIsSelected(t1);
+                DisplaySelectedFilm(true);
             }
         });
 
@@ -160,7 +169,16 @@ public class MovieList implements Initializable {
         });
         userFilms.setItems(addedFilm);
 
+        UpdateUserFilm();
 
+        DisplaySelectedFilm(false);
+    }
+
+    private void UpdateUserFilm() {
+        List<Film> userFilmList = ModelDB.DB.GetModel().GetAllMovieUser(1);
+        addedFilm.clear();
+        addedFilm.addAll(userFilmList);
+        userFilms.refresh();
     }
 
 
@@ -236,6 +254,20 @@ public class MovieList implements Initializable {
         //System.out.println(before+" "+after);
 
         //foundTitles
+    }
+    //TODO Selected Film should be disappear when the focus is lost
+    public void DisplaySelectedFilm(boolean bool){
+        if(bool) {
+
+
+            //selectedAnchor.layoutYProperty().set(51);
+            selectedAnchor.setVisible(true);
+        }else{
+
+
+            //selectedAnchor.layoutYProperty().set(-500);
+            selectedAnchor.setVisible(false);
+        }
     }
 
     private void MovieIsSelected(Film film){
