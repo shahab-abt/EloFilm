@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="searched movie can be rated and after that can be added to user viewList&#10;this information should be stored in Database">
+    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="problems by inserting new images in FilmEntryController is solved. but it's not clean at all.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/MovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/MovieList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/MovieList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/MovieList.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +17,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
+        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -31,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="MiroWireFrame" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,11 +61,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;F:/GitHub/Programing_X/EloFilm/src/main/java/Elo&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/GitHub/Programing_X/EloFilm/sqlite-jdbc-3.36.0.3.jar&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/shahab/Proj/ELOFILM/ELO/src/main/java/com/example/elo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/GitHub/Programing_X/EloFilm/javafx.embed.swing.JFXPanel/javafx-swing-20-ea+11.jar&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.42643678&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
@@ -76,9 +74,6 @@
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;sqlite&quot;
-    ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;SQLite&quot;
     ]
   }
 }</component>
@@ -94,20 +89,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/fxml" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Elo.StageManager">
-    <configuration name="Elo.StageManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Elo.StageManager" />
-      <module name="ELO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Elo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.controller.StageManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.elo.HelloApplication" />
       <module name="ELO" />
@@ -126,7 +108,20 @@
       <module name="ELO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Elo.*" />
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="controller.StageManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.StageManager" />
+      <module name="EloFilm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,7 +131,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Elo.StageManager" />
+        <item itemvalue="Application.controller.StageManager" />
         <item itemvalue="Application.controller.HelloApplication" />
         <item itemvalue="Application.HelloApplication" />
       </list>
@@ -154,19 +149,6 @@
       <workItem from="1671013954606" duration="23911000" />
       <workItem from="1671181130719" duration="16888000" />
       <workItem from="1671390581615" duration="14083000" />
-      <workItem from="1671476717802" duration="2809000" />
-      <workItem from="1671548691338" duration="23509000" />
-      <workItem from="1672071959986" duration="7014000" />
-      <workItem from="1672091090083" duration="8840000" />
-      <workItem from="1672341825151" duration="6311000" />
-      <workItem from="1672400977214" duration="462000" />
-      <workItem from="1672401453900" duration="3605000" />
-      <workItem from="1672415602699" duration="1560000" />
-      <workItem from="1672420295435" duration="2269000" />
-      <workItem from="1672424529073" duration="10496000" />
-      <workItem from="1672571173137" duration="10849000" />
-      <workItem from="1672742904949" duration="2119000" />
-      <workItem from="1674412472041" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="EloProject created">
       <created>1664525519125</created>
@@ -266,49 +248,7 @@
       <option name="project" value="LOCAL" />
       <updated>1671444129175</updated>
     </task>
-    <task id="LOCAL-00015" summary="backup Commit">
-      <created>1672091337460</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1672091337460</updated>
-    </task>
-    <task id="LOCAL-00016" summary="backup Commit">
-      <created>1672091494190</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1672091494190</updated>
-    </task>
-    <task id="LOCAL-00017" summary="movieList: textField with suggestion from DB">
-      <created>1672343834109</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1672343834109</updated>
-    </task>
-    <task id="LOCAL-00018" summary="new CSS File is created for MovieList&#10;in MovieList is it possible to search and select a movie from DB and see its image, Title, year&#10;in future it would be possible to give a rate to this select Movie and assign it t user selected Film">
-      <created>1672421514604</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1672421514604</updated>
-    </task>
-    <task id="LOCAL-00019" summary="selected movie will be added to a new ViewList">
-      <created>1672509379275</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1672509379275</updated>
-    </task>
-    <task id="LOCAL-00020" summary="searched movie can be rated and after that can be added to user viewList&#10;this information should be stored in Database">
-      <created>1672595745221</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1672595745221</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,9 +260,15 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+              <option name="FILTERS">
                 <map>
-                  <entry key="Show.Git.Branches" value="true" />
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="MovieList" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
@@ -346,12 +292,7 @@
     <MESSAGE value="Inserting and reading an image in the DB works. a new dummy button in FilmEntry to see added images" />
     <MESSAGE value="inserted image would be resized and cropped to a target size" />
     <MESSAGE value="problems by inserting new images in FilmEntryController is solved. but it's not clean at all." />
-    <MESSAGE value="backup Commit" />
-    <MESSAGE value="movieList: textField with suggestion from DB" />
-    <MESSAGE value="new CSS File is created for MovieList&#10;in MovieList is it possible to search and select a movie from DB and see its image, Title, year&#10;in future it would be possible to give a rate to this select Movie and assign it t user selected Film" />
-    <MESSAGE value="selected movie will be added to a new ViewList" />
-    <MESSAGE value="searched movie can be rated and after that can be added to user viewList&#10;this information should be stored in Database" />
-    <option name="LAST_COMMIT_MESSAGE" value="searched movie can be rated and after that can be added to user viewList&#10;this information should be stored in Database" />
+    <option name="LAST_COMMIT_MESSAGE" value="problems by inserting new images in FilmEntryController is solved. but it's not clean at all." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -392,12 +333,12 @@
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/ViewFilmController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
           <line>53</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/ViewFilmController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
           <line>282</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
@@ -407,19 +348,24 @@
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/ViewFilmController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ViewFilmController.java</url>
           <line>229</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>67</line>
+          <line>45</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
-          <line>103</line>
+          <url>file://$PROJECT_DIR$/src/main/java/controller/StageManager.java</url>
+          <line>97</line>
           <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
@@ -430,41 +376,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
           <line>115</line>
           <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="125" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="126" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
-          <line>135</line>
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
-          <line>255</line>
-          <option name="timeStamp" value="140" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
-          <line>234</line>
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieList.java</url>
-          <line>125</line>
-          <option name="timeStamp" value="147" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
