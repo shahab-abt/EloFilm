@@ -2,19 +2,14 @@ package Model;
 
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
-import javafx.scene.image.PixelFormat;
-import javafx.scene.image.PixelReader;
-import javafx.scene.image.WritablePixelFormat;
 
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.nio.ByteBuffer;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import javax.swing.*;
 
 public class ModelDB {
 
@@ -47,8 +42,30 @@ public class ModelDB {
             try {
                 connection = DriverManager.getConnection("jdbc:sqlite:" + dBName);
                 statement = connection.createStatement();
-                statement.executeUpdate("CREATE TABLE IF NOT EXISTS Film (film_id integer PRIMARY KEY autoincrement, title CHARACTER(20),year integer,elo_rate integer," + "image_id integer, CONSTRAINT unique_film UNIQUE (title,year))");
-                //statement.executeUpdate("CREATE TABLE image (ID INT PRIMARY KEY NOT NULL, photo MEDIUMBLOB)");
+                String sqlTableFilm = "CREATE TABLE  Film (" +
+                        "    film_id integer PRIMARY KEY autoincrement," +
+                        "    title CHARACTER(20)," +
+                        "    year integer," +
+                        "    photo MEDIUMBLOB," +
+                        "    CONSTRAINT unique_film UNIQUE (title,year)" +
+                        "                                )";
+                String sqlTableUser = "create table User(" +
+                        "   user_id  integer PRIMARY KEY autoincrement," +
+                        "   name CHARACTER(20) NOT NULL UNIQUE" +
+                        ")";
+                String sqlTableRanking = "create table Ranking(" +
+                        "    film_id integer," +
+                        "    user_id integer," +
+                        "    elo_rate integer NOT NULL ," +
+                        "    FOREIGN KEY (film_id) references Film(film_id)," +
+                        "    FOREIGN KEY (user_id) references User(user_id)," +
+                        "    CONSTRAINT ranking_id PRIMARY KEY (film_id,user_id)" +
+                        ")";
+                statement.executeUpdate(sqlTableFilm);
+                statement.executeUpdate(sqlTableUser);
+                statement.executeUpdate(sqlTableRanking);
+
+
 
 
 
@@ -58,54 +75,35 @@ public class ModelDB {
         }
 
         public int InsertFilm(Film newFilm) {
-            String insertFilmQuery = "INSERT INTO Film (title,year,elo_rate,photo)VALUES (?,?,?,?)";
+            String insertFilmQuery = "INSERT INTO Film (title,year,photo)VALUES (?,?,?)";
             Image imageFilm = newFilm.getImage();
+
             BufferedImage bufferedImage =
-                    new BufferedImage((
-                            int) imageFilm.getWidth(),
+                    new BufferedImage(
+                            (int) imageFilm.getWidth(),
                             (int) imageFilm.getHeight(),
                             BufferedImage.TYPE_INT_RGB);
             File imageFile = new File("imageFile.jpg");
             SwingFXUtils.fromFXImage(imageFilm,bufferedImage);
 
-
-
-
-
             try {
-
                 ImageIO.write(bufferedImage, "jpg",imageFile );
-
                 FileInputStream fileInputStream = new FileInputStream(imageFile);
 
-                PreparedStatement insertFilmSTMT = connection.prepareStatement(insertFilmQuery);
-                insertFilmSTMT.setString(1,newFilm.getTitle());
-                insertFilmSTMT.setInt(2,newFilm.getYear());
-                insertFilmSTMT.setInt(3,newFilm.getEloRate());
+                PreparedStatement pstmt = connection.prepareStatement(insertFilmQuery);
 
-                insertFilmSTMT.setBinaryStream(4, fileInputStream,fileInputStream.available());
-                insertFilmSTMT.execute();
+                pstmt.setString(1,newFilm.getTitle());
+                pstmt.setInt(2,newFilm.getYear());
+                //pstmt.setInt(3,newFilm.getEloRate());
 
-                /*
-                statement.executeUpdate("INSERT INTO Film " +
-                        "(film_id,title,year,elo_rate ,photo) VALUES (" +
-                        "  NULL," +
-                        " '" + newFilm.getTitle() + "' ," +
-                        " '" + newFilm.getYear() + "' ," +
-                        " '" + newFilm.getEloRate() + "' ," +
-                        " '" + newFilm.getImage_id() + "'" +
+                pstmt.setBinaryStream(3, fileInputStream,fileInputStream.available());
+                pstmt.execute();
 
-                        ")"
-                );
-                 */
+                return statement.executeQuery("SELECT last_insert_rowid()").getInt("last_insert_rowid()");
 
-                //int filmId= statement.executeQuery("SELECT last_insert_rowid()").getInt("last_insert_rowid()");
-                //return filmId;
-                return 0;
 
             } catch (SQLException | IOException e) {
-                //TODO: change function so it return a String for insert confirmation
-                // or duplicate Entry Error
+                //TODO: duplicate Entry should be reported
 
                 e.printStackTrace();
                 return -1;
@@ -131,147 +129,6 @@ public class ModelDB {
 
         }
 
-        public void InsertImage(int filmID, Image image){
-
-            try {
-            /*
-                File image = new File("samplePic.png");
-            if(!image.exists()){
-                System.out.println("No Image");
-
-            }
-
-             */
-                File tempFile = new File("tempFile.jpg");
-                //TODO image should be adjusted
-                int width = (int) image.getWidth();
-                int height = (int) image.getHeight();
-                BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
-
-                ImageIO.write(bi, "JPG", tempFile);
-
-                
-            int num_rows = 0;
-            FileInputStream fis = new FileInputStream(tempFile);
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            byte[] buf = new byte[1024];
-            for(int readNum; (readNum = fis.read(buf)) != -1;){
-                bos.write(buf, 0, readNum);
-            }
-            fis.close();
-            PreparedStatement ps = connection.prepareStatement(
-                    "INSERT INTO image (id, photo) VALUES(?,?)");
-            ps.setInt(1,filmID);
-            ps.setBytes(2, bos.toByteArray());
-            num_rows = ps.executeUpdate();
-
-                if(num_rows>0){
-                    System.out.println("Data has been inserted");
-                }
-            ps.close();
-
-            }catch(Exception e)
-            {
-                System.out.println(e);
-            }
-        }
-
-        public void TestInsertImage(int filmID,FileInputStream fileInputStream ){
-
-            String query = "INSERT INTO image (id, photo) VALUES(?,?)";
-            try {
-                PreparedStatement pstmt = connection.prepareStatement(query);
-                pstmt.setInt(1,filmID);
-                pstmt.setBinaryStream(2, fileInputStream,fileInputStream.available());
-                pstmt.execute();
-
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-        }
-
-        public Image TestGetImage(int id){
-            String query = "SELECT photo FROM image where ID=? ";
-
-            try {
-                String query2 = "SELECT photo FROM image where ID=2 ";
-                Statement stmt = connection.createStatement();
-                ResultSet rs = stmt.executeQuery(query2);
-                while (rs.next()){
-                    System.out.println("image loaded");
-
-
-                    byte[] imgss = rs.getBytes("photo");
-                    ByteArrayInputStream bis = new ByteArrayInputStream(imgss);
-                    Image image = new Image(bis);
-
-
-                    /*
-                    Blob blob = rs.getBlob("photo");
-                    InputStream inputStream = blob.getBinaryStream();
-                    Image image = new Image(inputStream);
-
-                     */
-                    return image;
-
-                }
-
-                /*
-                PreparedStatement pstmt = connection.prepareStatement(query);
-                pstmt.setInt(1,id);
-                ResultSet rs = pstmt.executeQuery();
-                while (rs.next()){
-                    System.out.println("image loaded");
-                    Blob blob = rs.getBlob("photo");
-                    InputStream inputStream = blob.getBinaryStream();
-                    Image image = new Image(inputStream);
-                    return image;
-
-
-                }
-
-                 */
-
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-
-            }
-            return null;
-
-        }
-
-        public void GetImage(){
-            try {
-                ResultSet rs;
-                rs = statement.executeQuery("SELECT * FROM image");
-                while (rs.next()){
-
-                    InputStream input = rs.getBinaryStream("photo");
-                    InputStreamReader inputReader = new InputStreamReader(input);
-                    if(inputReader.ready()){
-                        File tempFile = new File("sample.jpg");
-                        FileOutputStream fos = new FileOutputStream(tempFile);
-                        byte[] buffer = new byte[1024];
-                        while(input.read(buffer) > 0){
-                            fos.write(buffer);
-                        }
-                        Image image = new Image(tempFile.toURI().toURL().toString());
-
-                    }
-                }
-
-
-            }catch(Exception e)
-            {
-                System.out.println(e);
-            }
-        }
-
-        //public List<Buch> GetAllBuecher(boolean nurVerfuegbar) throws SQLException{
-    //TODO image variable wont handle properly
     public List<Film> GetAllFilms()
         {
             try{
@@ -279,19 +136,25 @@ public class ModelDB {
             ResultSet rs;
 
             rs = statement.executeQuery("SELECT * FROM Film");
-            int film_id =0;
-            String title ="";
-            int year=0;
-            int image_id=0;
-            int eloRank=0;
+            //int film_id =0;
+            //String title ="";
+            //int year=0;
+
+
+
+            //int image_id=0;
+            //int eloRank=0;
 
             while (rs.next()){
-                film_id = rs.getInt("film_id");
-                title= rs.getString("title");
-                year = rs.getInt("year");
-                eloRank = rs.getInt("elo_rate");
+                int film_id = rs.getInt("film_id");
+                String title= rs.getString("title");
+                int year = rs.getInt("year");
+                byte[] img = rs.getBytes("photo");
+                ByteArrayInputStream bis = new ByteArrayInputStream(img);
+                Image image = new Image(bis);
+                //eloRank = rs.getInt("elo_rate");
                 //image_id = rs.getInt("image_id");
-                returnValue.add(new Film(film_id,title,year,null, eloRank));
+                returnValue.add(new Film(film_id,title,year,image, -1));
             }
                 return  returnValue;
             }catch (SQLException e) {
@@ -299,19 +162,49 @@ public class ModelDB {
             return null;
             }
         }
-/*
+
+    public void GiveFilmRank(int userID,int filmID, int eloRank){
+            String query = "insert into Ranking values (?,?,?);";
+        try {
+            PreparedStatement stmt =  connection.prepareStatement(query);
+            stmt.setInt(1,filmID);
+            stmt.setInt(2,userID);
+            stmt.setInt(3,eloRank);
+            stmt.execute();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Film> GetAllMovieUser(int userID){
+        List<Film> returnValue = new ArrayList<>();
+            String query =
+                    "select Film.film_id,Film.title,Film.year,Film.photo, Ranking.elo_rate " +
+                    "from Film inner join Ranking  " +
+                    "on Film.film_id = Ranking.film_id where Ranking.user_id =?";
 
 
-         while(rs.next()) {
-             bcID = rs.getInt("buch_id");
-             titel = rs.getString("titel");
-             autor = rs.getString("autor");
-             isbn = rs.getInt("isbn");
-             anzahl = rs.getInt("anzahl");
+            try{
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setInt(1,userID);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+                int film_id = rs.getInt("film_id");
+                int eloRate = rs.getInt("elo_rate");
+                String title= rs.getString("title");
+                int year = rs.getInt("year");
+                byte[] img = rs.getBytes("photo");
+                ByteArrayInputStream bis = new ByteArrayInputStream(img);
+                Image image = new Image(bis);
+                returnValue.add(new Film(film_id,title,year,image, eloRate));
+            }
 
-             returnValue.add(new Buch(bcID,titel,autor,isbn,anzahl));
-         }
- */
+            }catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            return returnValue;
+    }
 
 
 

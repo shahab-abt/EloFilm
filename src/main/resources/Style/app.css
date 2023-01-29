@@ -1,12 +1,15 @@
 .root {
 
     -fx-font-size: 12px;
-    -fx-font-weight: bold;
+
     -fx-background-color: lightblue;
 }
 #imageStackPaneX{
     -fx-border-color:darkblue;
     -fx-border-width:10px;
+}
+.stackPane{
+    -fx-background-color: white;
 }
 
 
@@ -29,4 +32,8 @@
 HBox, VBox {
     -fx-alignment: center ;
     -fx-padding: 10 ;
+}
+
+.list-cell {
+    -fx-padding: 0px;
 }

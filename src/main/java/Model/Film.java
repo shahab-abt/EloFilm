@@ -7,7 +7,7 @@ public class Film {
     private int year, film_id,  eloRate;
     private  Image image;
 
-    //Create a new Object
+    //TODO: EloRate should be removed from here
     public Film(String title, int year, Image image, int eloRate){
         this.film_id = 0;
         this.title =title;
@@ -62,5 +62,10 @@ public class Film {
 
     public int getFilm_id() {
         return film_id;
+    }
+
+    @Override
+    public String toString() {
+        return (this.title+"( "+this.year+" )");
     }
 }

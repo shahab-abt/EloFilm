@@ -1,4 +1,4 @@
-package controller;
+package Elo;
 
 import Model.Film;
 import javafx.collections.FXCollections;
@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -74,5 +75,9 @@ public class mainMenuController implements Initializable  {
 
     public void OpenMainMenu(ActionEvent actionEvent) throws IOException {
         StageManager.SM.SetCurrentScene("FilmEntry", "Add New Film");
+    }
+
+    public void OpenMovieList(ActionEvent actionEvent) throws IOException {
+        StageManager.SM.SetCurrentScene("MovieList", "Movie List");
     }
 }
