@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../Style/app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Elo.UserMainViewController">
+   <center>
+      <AnchorPane maxWidth="960.0" minHeight="400.0" minWidth="960.0" prefWidth="960.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="title" styleClass="appTitle" text="ELO RANKING" />
+            <Pane layoutY="146.0" prefHeight="257.0" prefWidth="960.0" styleClass="whiteBackground">
+               <children>
+                  <ImageView fx:id="compareImageLeft" fitHeight="210.0" fitWidth="250.0" layoutX="26.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" styleClass="whiteBackground">
+                     <image>
+                        <Image url="@../Style/img/heat.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="compareImageRight" fitHeight="210.0" fitWidth="250.0" layoutX="687.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" styleClass="whiteBackground">
+                     <image>
+                        <Image url="@../Style/img/heat.jpg" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Button layoutX="415.0" layoutY="444.0" mnemonicParsing="false" onAction="#DoCrop" text="Button" />
+         </children></AnchorPane>
+   </center>
+   <left>
+      <Pane BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

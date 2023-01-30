@@ -1,8 +1,13 @@
 package Elo;
 
 import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -12,6 +17,8 @@ import static java.lang.Math.round;
 
 
 public  class ImageController {
+
+
     public static class Current{
         public static boolean imageEditable =true;
         private static ImageView imageView;
@@ -19,6 +26,25 @@ public  class ImageController {
         private static int widthTarget = 200 ;
         private static int heightTarget = 200;
 
+
+        //apply arc (round corner) to a given Imag
+        public static void MakeCornerRound(ImageView imageView, int arcWidth, int arcHeight){
+            //Image returnImg =null;
+
+            Rectangle clip = new Rectangle( imageView.getFitWidth(), imageView.getFitHeight());
+            clip.setArcWidth(arcWidth);
+            clip.setArcHeight(arcHeight);
+            imageView.setClip(clip);
+            SnapshotParameters parameters = new SnapshotParameters();
+            parameters.setFill(Color.TRANSPARENT);
+            WritableImage image = imageView.snapshot(parameters, null);
+            imageView.setClip(null);
+            imageView.setImage(image);
+
+
+
+            // return returnImg;
+        }
 
 
         public static void setWidthTarget(int widthTarget) {

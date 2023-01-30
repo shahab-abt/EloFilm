@@ -2,8 +2,15 @@
 
     -fx-font-size: 12px;
 
-    -fx-background-color: lightblue;
+    -fx-background-color: #020c14;
 }
+
+.appTitle{
+    -fx-background-color: #ebd224;
+    -fx-font-family: "BAD GRUNGE";
+    -fx-font-size:100px;
+}
+
 #imageStackPaneX{
     -fx-border-color:darkblue;
     -fx-border-width:10px;
@@ -36,4 +43,10 @@ HBox, VBox {
 
 .list-cell {
     -fx-padding: 0px;
+}
+
+.whiteBackground{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 30;
+
 }

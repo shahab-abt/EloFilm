@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="working on dependency problem" />
-
-  
+    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="working on dependency problem">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Elo/UserMainView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Elo/UserMainView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/Fonts/BAD GRUNGE.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/mainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/mainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/mainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/app.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MiroWireFrame" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,11 +67,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "/home/shahab/Proj/ELOFILM/ELO/src/main/java/com/example/elo",
-    "last_opened_file_path": "F:/GitHub/Programing_X/ELOControl/EloFilm/sqlite-jdbc-3.36.0.3.jar",
+    "last_directory_selection": "F:/GitHub/Programing_X/ELOMain/EloFilm/src/main/java/Elo",
+    "last_opened_file_path": "F:/GitHub/Programing_X/ELOMain/EloFilm/javafx.embed.swing.JFXPanel/javafx-swing-20-ea+11.jar",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.42643678",
     "settings.editor.selected.configurable": "database.query.execution",
@@ -89,13 +95,13 @@
       <recent name="$PROJECT_DIR$/src/main/java/fxml" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StageManager">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.elo.HelloApplication" />
+  <component name="RunManager" selected="Application.Elo.StageManager">
+    <configuration name="Elo.StageManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Elo.StageManager" />
       <module name="ELO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Model.*" />
+          <option name="PATTERN" value="Elo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,12 +109,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StageManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Elo.StageManager" />
-      <module name="EloFilm" />
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.elo.HelloApplication" />
+      <module name="ELO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Elo.*" />
+          <option name="PATTERN" value="Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,7 +150,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StageManager" />
+        <item itemvalue="Application.Elo.StageManager" />
         <item itemvalue="Application.controller.StageManager" />
         <item itemvalue="Application.controller.HelloApplication" />
         <item itemvalue="Application.HelloApplication" />
@@ -164,6 +170,7 @@
       <workItem from="1671181130719" duration="16888000" />
       <workItem from="1671390581615" duration="14083000" />
       <workItem from="1674470610803" duration="2113000" />
+      <workItem from="1675019760026" duration="10895000" />
     </task>
     <task id="LOCAL-00001" summary="EloProject created">
       <created>1664525519125</created>
@@ -401,9 +408,9 @@
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="123" />
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/UserMainView.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="124" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

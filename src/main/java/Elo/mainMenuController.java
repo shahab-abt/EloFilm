@@ -76,6 +76,9 @@ public class mainMenuController implements Initializable  {
     public void OpenMainMenu(ActionEvent actionEvent) throws IOException {
         StageManager.SM.SetCurrentScene("FilmEntry", "Add New Film");
     }
+    public void OpenUserMainView(ActionEvent actionEvent) throws IOException {
+        StageManager.SM.SetCurrentScene("UserMainView", "Main Manu");
+    }
 
     public void OpenMovieList(ActionEvent actionEvent) throws IOException {
         StageManager.SM.SetCurrentScene("MovieList", "Movie List");
