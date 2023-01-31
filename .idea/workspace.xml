@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="working on dependency problem">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Elo/UserMainView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Elo/UserMainView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/Fonts/BAD GRUNGE.ttf" afterDir="false" />
+    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="First windows is created ( UserMainView) &#10;it will be the Main Menu of a logged user. &#10;from this window can the user navigate to other windows">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/Fonts/AVENGEANCE MIGHTIEST AVENGER.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/ImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/mainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/mainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/mainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/UserMainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/UserMainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/app.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,32 +54,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "F:/GitHub/Programing_X/ELOMain/EloFilm/src/main/java/Elo",
-    "last_opened_file_path": "F:/GitHub/Programing_X/ELOMain/EloFilm/javafx.embed.swing.JFXPanel/javafx-swing-20-ea+11.jar",
-    "list.type.of.created.stylesheet": "CSS",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.42643678",
-    "settings.editor.selected.configurable": "database.query.execution",
-    "two.files.diff.last.used.file": "F:/GitHub/Programing_X/EloFilm/src/main/java/controller/StageManager.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_directory_selection&quot;: &quot;F:/GitHub/Programing_X/ELOMain/EloFilm/src/main/java/Elo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/GitHub/Programing_X/ELOMain/EloFilm/javafx.embed.swing.JFXPanel/javafx-swing-20-ea+11.jar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.42643678&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;F:/GitHub/Programing_X/EloFilm/src/main/java/controller/StageManager.java&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.elo" />
@@ -170,7 +167,9 @@
       <workItem from="1671181130719" duration="16888000" />
       <workItem from="1671390581615" duration="14083000" />
       <workItem from="1674470610803" duration="2113000" />
-      <workItem from="1675019760026" duration="10895000" />
+      <workItem from="1675019760026" duration="17045000" />
+      <workItem from="1675100236638" duration="3729000" />
+      <workItem from="1675116005627" duration="7558000" />
     </task>
     <task id="LOCAL-00001" summary="EloProject created">
       <created>1664525519125</created>
@@ -277,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674472489295</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="First windows is created ( UserMainView) &#10;it will be the Main Menu of a logged user. &#10;from this window can the user navigate to other windows">
+      <created>1675093111900</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1675093111900</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +328,8 @@
     <MESSAGE value="inserted image would be resized and cropped to a target size" />
     <MESSAGE value="problems by inserting new images in FilmEntryController is solved. but it's not clean at all." />
     <MESSAGE value="working on dependency problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on dependency problem" />
+    <MESSAGE value="First windows is created ( UserMainView) &#10;it will be the Main Menu of a logged user. &#10;from this window can the user navigate to other windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="First windows is created ( UserMainView) &#10;it will be the Main Menu of a logged user. &#10;from this window can the user navigate to other windows" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -408,8 +415,8 @@
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Elo/UserMainView.java</url>
-          <line>28</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java</url>
+          <line>30</line>
           <option name="timeStamp" value="124" />
         </line-breakpoint>
       </breakpoints>

@@ -6,10 +6,44 @@
 }
 
 .appTitle{
-    -fx-background-color: #ebd224;
+
     -fx-font-family: "BAD GRUNGE";
     -fx-font-size:100px;
+    -fx-text-fill: #020c14;
 }
+.headerBanner{
+    -fx-background-color: #EBD224;
+}
+
+
+.filmTitle{
+    -fx-font-family: "AVENGEANCE MIGHTIEST AVENGER";
+    -fx-font-size:20px;
+    -fx-text-fill: #EBD224;
+}
+.filmYear{
+    -fx-font-family: "AVENGEANCE MIGHTIEST AVENGER";
+    -fx-font-size:20px;
+    -fx-text-fill: #EBD224;
+    -fx-alignment: center;
+
+}
+.filmRate{
+    -fx-font-family: "AVENGEANCE MIGHTIEST AVENGER";
+    -fx-font-size:40px;
+    -fx-text-fill: #EBD224;
+   -fx-alignment: center-right;
+
+}
+.filmRateStar{
+    -fx-font-size:40px;
+    -fx-text-fill: #EBD224;
+    -fx-alignment: center-right;
+
+
+}
+
+
 
 #imageStackPaneX{
     -fx-border-color:darkblue;
@@ -27,7 +61,7 @@
 
 .imageViewIdle{
     -fx-border-width: 1px;
-    -fx-border-color: black;
+    -fx-border-color: #ffd500;
 }
 
 .imageViewSelected{
@@ -38,11 +72,24 @@
 
 HBox, VBox {
     -fx-alignment: center ;
-    -fx-padding: 10 ;
+
+
 }
 
-.list-cell {
+#userAllFilms{
+    -fx-background-color: #020c14;
+
+}
+.list-cell{
+    -fx-background-color: #020c14;
     -fx-padding: 0px;
+
+}
+
+
+.list-view, .split-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
 }
 
 .whiteBackground{
