@@ -77,13 +77,13 @@ public class UserMainViewController implements Initializable  {
                             imv.setImage(film.getImage());
 
                             imv.setFitHeight(100);
-                            imv.setFitWidth(250);
+                            imv.setFitWidth(220);
                             imv.setLayoutX(1);
                             imv.setLayoutY(6);
 
                             Pane imageContainer = new Pane();
                             imageContainer.setPrefHeight(112);
-                            imageContainer.setPrefWidth(256);
+                            imageContainer.setPrefWidth(245);
 
                             //Insets insets = new Insets(6,6,6,6);
 
@@ -98,14 +98,14 @@ public class UserMainViewController implements Initializable  {
                             //vBox children
                             Label filmTitle = new Label(film.getTitle());
                             filmTitle.setPrefHeight(112);
-                            filmTitle.setPrefWidth(262);
+                            filmTitle.setPrefWidth(245);
                             filmTitle.setPadding(new Insets(6,6,6,6));
                             filmTitle.getStyleClass().add("filmTitle");
 
 
                             Label filmYear = new Label(String.valueOf(film.getYear()));
                             filmYear.setPrefHeight(112);
-                            filmYear.setPrefWidth(262);
+                            filmYear.setPrefWidth(245);
                             filmYear.setPadding(new Insets(6,6,6,6));
                             filmYear.getStyleClass().add("filmYear");
 
@@ -117,14 +117,14 @@ public class UserMainViewController implements Initializable  {
                             //movieInfo.getChildren().addAll(filmTitle,filmYear);
                             Label eloRank = new Label(String.valueOf( film.getEloRate()));
                             eloRank.setPrefHeight(112);
-                            eloRank.setPrefWidth(206);
+                            eloRank.setPrefWidth(200);
 
                             eloRank.getStyleClass().add("filmRate");
                             eloRank.setPadding(new Insets(6,0,6,0));
 
                             Label star = new Label("★");
                             star.getStyleClass().add("filmRateStar");
-                            star.setPrefWidth(50);
+                            star.setPrefWidth(45);
                             star.setPrefHeight(112);
 
                             ImageController.Current.MakeCornerRound(imv,20,20);

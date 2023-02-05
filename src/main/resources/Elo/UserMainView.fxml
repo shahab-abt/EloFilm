@@ -4,25 +4,32 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../Style/app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Elo.UserMainViewController">
-   <center>
-      <AnchorPane maxWidth="960.0" minHeight="400.0" minWidth="1300.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
+<BorderPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../Style/app.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Elo.UserMainViewController">
+   <top>
+      <Pane prefHeight="100.0" prefWidth="200.0" styleClass="headerBanner">
          <children>
-            <Pane layoutY="12.0" prefHeight="246.0" prefWidth="1300.0" styleClass="comparePane">
+            <Label fx:id="title" layoutX="0" prefHeight="100.0" styleClass="appTitle" text="ELO RANKING" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <AnchorPane maxWidth="960.0" minHeight="400.0" minWidth="1200.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutY="12.0" prefHeight="160.0" prefWidth="1200.0" styleClass="comparePane">
                <children>
-                  <ImageView fx:id="compareImageLeft" fitHeight="212.0" fitWidth="250.0" layoutX="262.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="compareImageLeft" fitHeight="150.0" fitWidth="220.0" layoutX="245.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Style/img/heat2.jpg" />
+                        <Image url="@../Style/img/heat.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="compareImageRight" fitHeight="212.0" fitWidth="250.0" layoutX="788.0" layoutY="0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="compareImageRight" fitHeight="150.0" fitWidth="220.0" layoutX="735.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Style/img/intersteller.jpg" />
                      </image>
                   </ImageView>
-                  <Button layoutX="524.0" layoutY="81.0" mnemonicParsing="false" prefHeight="50" prefWidth="250" styleClass="button" text="movie compare" />
+                  <Button layoutX="490.0" layoutY="50.0" mnemonicParsing="false" prefHeight="50" prefWidth="220" styleClass="button" text="movie compare" />
                </children></Pane>
-            <ListView fx:id="userAllFilms" layoutX="0" layoutY="300.0" prefHeight="566.0" prefWidth="1300.0" />
+            <ListView fx:id="userAllFilms" layoutX="0" layoutY="200.0" prefHeight="566.0" prefWidth="1200.0" />
          </children></AnchorPane>
    </center>
    <left>
@@ -31,14 +38,13 @@
    <right>
       <Pane BorderPane.alignment="CENTER" />
    </right>
-   <top>
-      <Pane prefHeight="100.0" prefWidth="200.0" styleClass="headerBanner">
+
+   <bottom>
+      <Pane minWidth="1200" prefHeight="100.0" prefWidth="1200.0" styleClass="headerBanner" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="title" layoutX="310" prefHeight="100.0" styleClass="appTitle" text="ELO RANKING" />
+            <Button layoutX="490" layoutY="25" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50" prefWidth="220" styleClass="button" text="manage films" BorderPane.alignment="CENTER" />
          </children>
       </Pane>
-   </top>
-   <bottom>
-      <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50" prefWidth="250" styleClass="button" text="manage films" BorderPane.alignment="CENTER" />
+
    </bottom>
 </BorderPane>

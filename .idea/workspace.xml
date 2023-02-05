@@ -9,6 +9,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/UserMainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/UserMainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/img/heat2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/img/intersteller.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/img/intersteller.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
