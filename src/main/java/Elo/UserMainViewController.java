@@ -111,7 +111,7 @@ public class UserMainViewController implements Initializable  {
 
                             Pane emptySpace = new Pane();
                             emptySpace.setPrefHeight(112);
-                            emptySpace.setMinWidth(255);
+                            emptySpace.setMinWidth(210);
 
 
                             //movieInfo.getChildren().addAll(filmTitle,filmYear);

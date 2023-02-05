@@ -8,18 +8,19 @@
    <center>
       <AnchorPane maxWidth="960.0" minHeight="400.0" minWidth="1300.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane layoutY="12.0" prefHeight="212.0" prefWidth="1300.0" styleClass="whiteBackground">
+            <Pane layoutY="12.0" prefHeight="246.0" prefWidth="1300.0" styleClass="comparePane">
                <children>
-                  <ImageView fx:id="compareImageLeft" fitHeight="212.0" fitWidth="250.0" layoutX="262.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true" styleClass="whiteBackground">
+                  <ImageView fx:id="compareImageLeft" fitHeight="212.0" fitWidth="250.0" layoutX="262.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Style/img/heat2.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="compareImageRight" fitHeight="212.0" fitWidth="250.0" layoutX="788.0" layoutY="0" pickOnBounds="true" preserveRatio="true" styleClass="whiteBackground">
+                  <ImageView fx:id="compareImageRight" fitHeight="212.0" fitWidth="250.0" layoutX="788.0" layoutY="0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Style/img/intersteller.jpg" />
                      </image>
                   </ImageView>
+                  <Button layoutX="524.0" layoutY="81.0" mnemonicParsing="false" prefHeight="50" prefWidth="250" styleClass="button" text="movie compare" />
                </children></Pane>
             <ListView fx:id="userAllFilms" layoutX="0" layoutY="300.0" prefHeight="566.0" prefWidth="1300.0" />
          </children></AnchorPane>
@@ -37,4 +38,7 @@
          </children>
       </Pane>
    </top>
+   <bottom>
+      <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50" prefWidth="250" styleClass="button" text="manage films" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>
