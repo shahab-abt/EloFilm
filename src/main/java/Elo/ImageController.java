@@ -74,6 +74,49 @@ public  class ImageController {
             Current.imageView.setImage(image);
         }
 
+        public static Image CropAndResizeImage(Image img, int inputWidth,int inputHeight){
+            int width = (int) img.getWidth();
+            int height = (int) img.getHeight();
+
+            //create a BufferedImage from existing Image
+            BufferedImage bufferedImage =
+                    new BufferedImage(
+                            width,
+                            height,
+                            BufferedImage.TYPE_INT_RGB);
+            SwingFXUtils.fromFXImage(img,bufferedImage);
+
+            //Ratio of width and height of target image to original
+            //float widthRatio = (float)  widthTarget/width;
+            float heightRatio = (float) inputHeight/height;
+            float targetAspectRation = (float)inputWidth/inputHeight;
+
+            // new value of A side based on ratio of other side
+            //int newHeightByWR = round(height*widthRatio);
+            int newWidthByHR = round(width*heightRatio);
+
+            //Gap to size of ImageTarget is
+            //one side is greater than or equal to zero and other side less or equal to zero
+            int gapToTargetWidth =  newWidthByHR - inputWidth;
+
+
+            if(gapToTargetWidth>=0){
+                int newWidth =  round(height * (targetAspectRation));
+                bufferedImage = CropOuterEdge( bufferedImage,newWidth, height );
+            }else{
+                int newHeight =  round(width * (1/targetAspectRation));
+                bufferedImage = CropOuterEdge( bufferedImage,width, newHeight );
+            }
+
+            BufferedImage resizedImage = new BufferedImage(inputWidth,inputHeight, BufferedImage.TYPE_INT_RGB);
+            Graphics2D graphics2D = resizedImage.createGraphics();
+
+            graphics2D.drawImage(bufferedImage, 0, 0, inputWidth, inputHeight, null);
+            graphics2D.dispose();
+
+            return SwingFXUtils.toFXImage(resizedImage, null);
+        }
+        //TODO: should be removed safely
         private static Image CropAndResizeImage(Image img){
             int width = (int) img.getWidth();
             int height = (int) img.getHeight();

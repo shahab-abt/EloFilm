@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="UserMainView is almost complete.&#10;it needs button so can navigate other windows">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Elo/MovieCompare.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Elo/MovieCompare.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/ImageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/UserMainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/UserMainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/img/heat2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/img/intersteller.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/img/intersteller.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,51 +55,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;F:/GitHub/Programing_X/ELOMain/EloFilm/src/main/java/Elo&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/GitHub/Programing_X/ELOMain/EloFilm/javafx.embed.swing.JFXPanel/javafx-swing-20-ea+11.jar&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.42643678&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;F:/GitHub/Programing_X/EloFilm/src/main/java/controller/StageManager.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "F:/GitHub/Programing_X/ELOMain/EloFilm/src/main/resources/Elo",
+    "last_opened_file_path": "F:/GitHub/Programing_X/ELOMain/EloFilm/javafx.embed.swing.JFXPanel/javafx-swing-20-ea+11.jar",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.42643678",
+    "settings.editor.selected.configurable": "database.query.execution",
+    "two.files.diff.last.used.file": "F:/GitHub/Programing_X/EloFilm/src/main/java/controller/StageManager.java"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.elo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\GitHub\Programing_X\ELOMain\EloFilm\src\main\java\Elo" />
       <recent name="F:\GitHub\Programing_X\EloFilm\src\main\Style" />
       <recent name="$PROJECT_DIR$/src/main/java/Model" />
       <recent name="$PROJECT_DIR$/src/main/resources/controller" />
       <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
-      <recent name="$PROJECT_DIR$/src/main/java/fxml" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Elo.StageManager">
-    <configuration name="Elo.StageManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Elo.StageManager" />
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.elo.HelloApplication" />
       <module name="ELO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Elo.*" />
+          <option name="PATTERN" value="Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.elo.HelloApplication" />
+    <configuration name="StageManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Elo.StageManager" />
       <module name="ELO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Model.*" />
+          <option name="PATTERN" value="Elo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -426,8 +426,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java</url>
-          <line>30</line>
+          <line>32</line>
           <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="125" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

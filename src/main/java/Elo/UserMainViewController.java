@@ -12,12 +12,14 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -74,7 +76,8 @@ public class UserMainViewController implements Initializable  {
 
 
                             ImageView imv = new ImageView();
-                            imv.setImage(film.getImage());
+                            Image croppedImage = ImageController.Current.CropAndResizeImage(film.getImage(),220,100);
+                            imv.setImage(croppedImage);
 
                             imv.setFitHeight(100);
                             imv.setFitWidth(220);
@@ -141,8 +144,18 @@ public class UserMainViewController implements Initializable  {
         UpdateUserFilm();
 
     }
+    @FXML
+    public void GotoCompare(){
+        try {
+            StageManager.SM.SetCurrentScene("MovieCompare", "Movie Compare");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
     private void UpdateUserFilm() {
+        //TODO should be adjusted for current user
         List<Film> userFilmList = ModelDB.DB.GetModel().GetAllMovieUser(1);
         observingFilms.clear();
         observingFilms.addAll(userFilmList);
