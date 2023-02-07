@@ -41,22 +41,25 @@
     -fx-font-family: "ChunkFive Regular";
     -fx-font-size:20px;
     -fx-text-fill: #E6E6E6;
-    -fx-alignment:top-center;
+    -fx-alignment:center;
     -fx-wrap-text: true;
     -fx-text-alignment: center;
+    -fx-border-width: 3;
+    -fx-border-color: #E6E6E6 ;
+    -fx-border-radius: 15;
 }
 
 .filmRate{
-    -fx-font-family: "AVENGEANCE MIGHTIEST AVENGER";
-    -fx-font-size:40px;
+    -fx-font-family: "ChunkFive Regular";
+    -fx-font-size:30px;
     -fx-text-fill: #E6E6E6;
    -fx-alignment: center-right;
 
 }
 .filmRateStar{
-    -fx-font-size:40px;
+    -fx-font-size:30px;
     -fx-text-fill: #E6E6E6;
-    -fx-alignment: center-right;
+    -fx-alignment: center-left;
 
 
 }

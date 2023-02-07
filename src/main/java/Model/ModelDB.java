@@ -201,7 +201,8 @@ public class ModelDB {
             String query =
                     "select Film.film_id,Film.title,Film.year,Film.photo, Ranking.elo_rate " +
                     "from Film inner join Ranking  " +
-                    "on Film.film_id = Ranking.film_id where Ranking.user_id =?";
+                    "on Film.film_id = Ranking.film_id where Ranking.user_id =?" +
+                            "order by elo_rate desc " ;
 
 
             try{

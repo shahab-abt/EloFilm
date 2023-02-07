@@ -38,19 +38,12 @@ public class UserMainViewController implements Initializable  {
     ListView<Film> userAllFilms;
 
     private ObservableList<Film> observingFilms = FXCollections.observableArrayList();
+    private List<Film> userFilmList;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ImageController.Current.MakeCornerRound(compareImageRight, 50,50);
-        ImageController.Current.MakeCornerRound(compareImageLeft, 30,30);
 
 
-        var test1 = Font.getFamilies();
-
-
-
-        var test2 = Font.getFamilies();
-        int a =2;
 
 
         // setup userAllFilms so it creat List of viewable object that present information every rated Film from user
@@ -98,18 +91,18 @@ public class UserMainViewController implements Initializable  {
                             //movieInfo.setPrefHeight(160);
                             //movieInfo.setPrefWidth(800);
                             //vBox children
-                            Label filmTitle = new Label(film.getTitle());
+                            Label filmTitle = new Label(film.toString());
                             filmTitle.setPrefHeight(112);
-                            filmTitle.setPrefWidth(245);
+                            filmTitle.setPrefWidth(502);
                             filmTitle.setPadding(new Insets(6,6,6,6));
                             filmTitle.getStyleClass().add("filmTitle");
 
 
-                            Label filmYear = new Label(String.valueOf(film.getYear()));
-                            filmYear.setPrefHeight(112);
-                            filmYear.setPrefWidth(245);
-                            filmYear.setPadding(new Insets(6,6,6,6));
-                            filmYear.getStyleClass().add("filmYear");
+                            //Label filmYear = new Label(String.valueOf(film.getYear()));
+                            //filmYear.setPrefHeight(112);
+                            //filmYear.setPrefWidth(245);
+                            //filmYear.setPadding(new Insets(6,6,6,6));
+                            //filmYear.getStyleClass().add("filmYear");
 
                             Pane emptySpace = new Pane();
                             emptySpace.setPrefHeight(112);
@@ -130,7 +123,7 @@ public class UserMainViewController implements Initializable  {
                             star.setPrefHeight(112);
 
                             ImageController.Current.MakeCornerRound(imv,20,20);
-                            movieBox.getChildren().addAll(imageContainer,filmTitle,filmYear,emptySpace,eloRank,star);
+                            movieBox.getChildren().addAll(imageContainer,filmTitle,emptySpace,eloRank,star);
 
 
                             setGraphic(movieBox);
@@ -142,6 +135,16 @@ public class UserMainViewController implements Initializable  {
         userAllFilms.setItems(observingFilms);
         UpdateUserFilm();
 
+
+        Image cILeft = userFilmList.get(0).getImage();
+        cILeft = ImageController.Current.CropAndResizeImage(cILeft,220,150);
+        Image cIRight = userFilmList.get(1).getImage();
+        cIRight = ImageController.Current.CropAndResizeImage(cIRight,220,150);
+        compareImageLeft.setImage(cILeft);
+        compareImageRight.setImage(cIRight);
+
+        ImageController.Current.MakeCornerRound(compareImageRight, 50,50);
+        ImageController.Current.MakeCornerRound(compareImageLeft, 30,30);
     }
     @FXML
     public void GotoCompare(){
@@ -155,7 +158,7 @@ public class UserMainViewController implements Initializable  {
 
     private void UpdateUserFilm() {
         //TODO should be adjusted for current user
-        List<Film> userFilmList = ModelDB.DB.GetModel().GetAllMovieUser(1);
+        userFilmList = ModelDB.DB.GetModel().GetAllMovieUser(1);
         observingFilms.clear();
         observingFilms.addAll(userFilmList);
         userAllFilms.refresh();

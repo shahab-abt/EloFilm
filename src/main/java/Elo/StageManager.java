@@ -42,13 +42,17 @@ public class StageManager extends Application {
         //stage.setTitle("Hello!");
 
         //create mainMenu Scene
+
+        //TODO:is it necessary?
         FXMLLoader fxmlLoader = new FXMLLoader(StageManager.class.getResource("mainMenu.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),1920,1080);
 
         //update Stage´s Scene with mainMenu Scene
         stage.setScene(scene);
         stage.show();
-        SM.SetCurrentScene("mainMenu", "Main Menu");
+        //mainMenu is old mainMenu. at this time creating new Movie and managing them is from here possible
+        //SM.SetCurrentScene("mainMenu", "Main Menu");
+        SM.SetCurrentScene("UserMainView", "Movie List");
 
     }
 
