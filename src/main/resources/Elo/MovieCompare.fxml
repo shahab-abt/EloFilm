@@ -16,22 +16,21 @@
     <center>
         <AnchorPane maxWidth="1200.0" minHeight="400.0" minWidth="960.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
             <children>
-                <Pane layoutY="12.0" prefHeight="274.0" prefWidth="1200.0" styleClass="comparePane">
+                <Pane layoutY="12.0" prefHeight="300.0" prefWidth="1200.0" styleClass="comparePane">
                     <children>
-                        <ImageView fx:id="compareImage1" fitHeight="150.0" fitWidth="220.0" layoutX="245.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="compareImage1" fitHeight="150.0" fitWidth="220.0" layoutX="245.0" layoutY="10.0" onMouseClicked="#FirstFilmSelected" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../Style/img/heat.jpg" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="compareImage2" fitHeight="150.0" fitWidth="220.0" layoutX="735.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="compareImage2" fitHeight="150.0" fitWidth="220.0" layoutX="735.0" layoutY="10.0" onMouseClicked="#SecondFilmSelected" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../Style/img/intersteller.jpg" />
                             </image>
                         </ImageView>
-                  <Label fx:id="filmLabel1" layoutX="341.0" layoutY="203.0" text="Film1" styleClass="filmTitle"/>
-                  <Label fx:id="filmLabel2" layoutX="831.0" layoutY="203.0" text="Film2" styleClass="filmTitle" />
-                  <Label fx:id="filmYear1" layoutX="341.0" layoutY="231.0" text="Year1" styleClass="filmYear" />
-                  <Label fx:id="filmYear2" layoutX="831.0" layoutY="231.0" text="Year1" styleClass="filmYear"  />
+                  <Label fx:id="filmLabel1" layoutX="245.0" layoutY="180.0" onMouseClicked="#FirstFilmSelected" prefHeight="80.0" prefWidth="220.0" styleClass="filmTitleCompare" text="film1" />
+                  <Button contentDisplay="CENTER" layoutX="490.0" layoutY="110.0" mnemonicParsing="false" onAction="#SelectDraw" prefHeight="50" prefWidth="220" styleClass="button" text="draw" />
+                  <Label fx:id="filmLabel2" layoutX="735.0" layoutY="180.0" onMouseClicked="#SecondFilmSelected" prefHeight="80.0" prefWidth="220.0" styleClass="filmTitleCompare" text="Film2" />
                     </children>
                 </Pane>
             </children>

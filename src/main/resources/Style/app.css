@@ -27,17 +27,25 @@
 }
 
 .filmTitle{
-    -fx-font-family: "AVENGEANCE MIGHTIEST AVENGER";
+    -fx-font-family: "ChunkFive Regular";
     -fx-font-size:20px;
     -fx-text-fill: #E6E6E6;
-}
+    }
 .filmYear{
-    -fx-font-family: "AVENGEANCE MIGHTIEST AVENGER";
+    -fx-font-family: "ChunkFive Regular";
     -fx-font-size:20px;
     -fx-text-fill: #E6E6E6;
     -fx-alignment: center;
-
 }
+.filmTitleCompare{
+    -fx-font-family: "ChunkFive Regular";
+    -fx-font-size:20px;
+    -fx-text-fill: #E6E6E6;
+    -fx-alignment:top-center;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
 .filmRate{
     -fx-font-family: "AVENGEANCE MIGHTIEST AVENGER";
     -fx-font-size:40px;

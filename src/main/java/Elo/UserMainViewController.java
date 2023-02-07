@@ -47,8 +47,7 @@ public class UserMainViewController implements Initializable  {
 
         var test1 = Font.getFamilies();
 
-        Font.loadFont(UserMainViewController.class.getResourceAsStream("/Style/Fonts/BAD GRUNGE.ttf"),10);
-        Font.loadFont(UserMainViewController.class.getResourceAsStream("/Style/Fonts/AVENGEANCE MIGHTIEST AVENGER.ttf"),10);
+
 
         var test2 = Font.getFamilies();
         int a =2;

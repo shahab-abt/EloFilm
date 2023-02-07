@@ -163,18 +163,37 @@ public class ModelDB {
             }
         }
 
-    public void GiveFilmRank(int userID,int filmID, int eloRank){
+    public void GiveFilmRank(int userId,int filmId, int eloRate){
             String query = "insert into Ranking values (?,?,?);";
         try {
             PreparedStatement stmt =  connection.prepareStatement(query);
-            stmt.setInt(1,filmID);
-            stmt.setInt(2,userID);
-            stmt.setInt(3,eloRank);
+            stmt.setInt(1,filmId);
+            stmt.setInt(2,userId);
+            stmt.setInt(3,eloRate);
             stmt.execute();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void UpdateEloRate(int userId, int filmId, int eloRate){
+
+        String query ="Update Ranking" +
+                "        SET elo_rate = ?" +
+                "        where" +
+                "                user_id =? and" +
+                "                film_id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setInt(1,eloRate);
+            stmt.setInt(2,userId);
+            stmt.setInt(3,filmId);
+            stmt.execute();
+
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public List<Film> GetAllMovieUser(int userID){
@@ -205,6 +224,7 @@ public class ModelDB {
             }
             return returnValue;
     }
+
 
 
 
