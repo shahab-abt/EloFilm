@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../Style/app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Elo.MovieCompare">
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="headerBanner">
+            <children>
+
+                <Label fx:id="title" layoutX="0" maxWidth="1200.0" minWidth="960.0" prefHeight="100.0" prefWidth="1200.0" styleClass="appTitle" text="ELO RANKING" />
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <AnchorPane maxWidth="1200.0" minHeight="400.0" minWidth="960.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Pane layoutY="12.0" prefHeight="300.0" prefWidth="1200.0" styleClass="comparePane">
+                    <children>
+                        <ImageView fx:id="compareImage1" fitHeight="150.0" fitWidth="220.0" layoutX="245.0" layoutY="10.0" onMouseClicked="#FirstFilmSelected" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Style/img/heat.jpg" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="compareImage2" fitHeight="150.0" fitWidth="220.0" layoutX="735.0" layoutY="10.0" onMouseClicked="#SecondFilmSelected" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Style/img/intersteller.jpg" />
+                            </image>
+                        </ImageView>
+                  <Label fx:id="filmLabel1" layoutX="245.0" layoutY="180.0" onMouseClicked="#FirstFilmSelected" prefHeight="80.0" prefWidth="220.0" styleClass="filmTitleCompare" text="film1" />
+                  <Button contentDisplay="CENTER" layoutX="490.0" layoutY="110.0" mnemonicParsing="false" onAction="#SelectDraw" prefHeight="50" prefWidth="220" styleClass="button" text="draw" />
+                  <Label fx:id="filmLabel2" layoutX="735.0" layoutY="180.0" onMouseClicked="#SecondFilmSelected" prefHeight="80.0" prefWidth="220.0" styleClass="filmTitleCompare" text="Film2" />
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+    </center>
+    <left>
+        <Pane BorderPane.alignment="CENTER" />
+    </left>
+    <right>
+        <Pane BorderPane.alignment="CENTER" />
+    </right>
+
+    <bottom>
+        <Pane minWidth="1200" prefHeight="100.0" prefWidth="1200.0" styleClass="headerBanner" BorderPane.alignment="CENTER">
+            <children>
+                <Button contentDisplay="CENTER" layoutX="490" layoutY="25" mnemonicParsing="false" onAction="#GotoUserFilm" prefHeight="50" prefWidth="220" styleClass="button" text="list of films" BorderPane.alignment="CENTER" />
+            </children>
+        </Pane>
+
+    </bottom>
+</BorderPane>

@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.*;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,6 +23,12 @@ public class StageManager extends Application {
     public void start(Stage stage) throws Exception {
         //temporal Code to check how save image into Database
         ModelDB db = new ModelDB("DB.db");
+
+        Font.loadFont(UserMainViewController.class.getResourceAsStream("/Style/Fonts/BAD GRUNGE.ttf"),10);
+        Font.loadFont(UserMainViewController.class.getResourceAsStream("/Style/Fonts/AVENGEANCE MIGHTIEST AVENGER.ttf"),10);
+        Font.loadFont(UserMainViewController.class.getResourceAsStream("/Style/Fonts/ChunkFive-Regular.otf"),10);
+
+
         //db.InsertImage();
         //db.GetImage();
         //

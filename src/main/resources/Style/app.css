@@ -2,8 +2,73 @@
 
     -fx-font-size: 12px;
 
-    -fx-background-color: lightblue;
+    -fx-background-color: #242424;
 }
+
+.appTitle{
+
+    -fx-font-family: "BAD GRUNGE";
+    -fx-font-size:100px;
+    -fx-text-fill: #E6E6E6;
+}
+.headerBanner{
+    -fx-background-color: #242424;
+}
+
+.button{
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-font-family: "AVENGEANCE MIGHTIEST AVENGER";
+    -fx-font-size:15px;
+    -fx-text-fill: #E6E6E6;
+    -fx-border-width: 3;
+    -fx-border-color: #E6E6E6 ;
+    -fx-border-radius: 15;
+    -fx-underline: true;
+}
+
+.filmTitle{
+    -fx-font-family: "ChunkFive Regular";
+    -fx-font-size:20px;
+    -fx-text-fill: #E6E6E6;
+    }
+.filmYear{
+    -fx-font-family: "ChunkFive Regular";
+    -fx-font-size:20px;
+    -fx-text-fill: #E6E6E6;
+    -fx-alignment: center;
+}
+.filmTitleCompare{
+    -fx-font-family: "ChunkFive Regular";
+    -fx-font-size:20px;
+    -fx-text-fill: #E6E6E6;
+    -fx-alignment:top-center;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+.filmRate{
+    -fx-font-family: "AVENGEANCE MIGHTIEST AVENGER";
+    -fx-font-size:40px;
+    -fx-text-fill: #E6E6E6;
+   -fx-alignment: center-right;
+
+}
+.filmRateStar{
+    -fx-font-size:40px;
+    -fx-text-fill: #E6E6E6;
+    -fx-alignment: center-right;
+
+
+}
+
+.comparePane{
+    -fx-background-color: #808080;
+    -fx-background-radius: 15;
+
+}
+
+
+
 #imageStackPaneX{
     -fx-border-color:darkblue;
     -fx-border-width:10px;
@@ -20,7 +85,7 @@
 
 .imageViewIdle{
     -fx-border-width: 1px;
-    -fx-border-color: black;
+    -fx-border-color: #EBD224;
 }
 
 .imageViewSelected{
@@ -31,9 +96,22 @@
 
 HBox, VBox {
     -fx-alignment: center ;
-    -fx-padding: 10 ;
+
+
 }
 
-.list-cell {
+#userAllFilms{
+    -fx-background-color: #242424;
+
+}
+.list-cell{
+    -fx-background-color: #242424;
     -fx-padding: 0px;
+
+}
+
+
+.list-view, .split-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
 }

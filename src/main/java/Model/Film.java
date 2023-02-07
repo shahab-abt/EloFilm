@@ -66,6 +66,6 @@ public class Film {
 
     @Override
     public String toString() {
-        return (this.title+"( "+this.year+" )");
+        return (this.title+" ("+this.year+")");
     }
 }

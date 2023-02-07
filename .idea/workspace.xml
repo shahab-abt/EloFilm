@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="working on dependency problem" />
-
-  
+    <list default="true" id="28c7276d-79c3-4494-9df8-6111503d290e" name="Changes" comment="MovieCompare window is created. now it shows randomly two Films to be compared">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/Fonts/ChunkFive-Regular.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqlDataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/MovieCompare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/MovieCompare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/StageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Elo/MovieCompare.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Elo/MovieCompare.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/app.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MiroWireFrame" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,11 +72,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "/home/shahab/Proj/ELOFILM/ELO/src/main/java/com/example/elo",
-    "last_opened_file_path": "F:/GitHub/Programing_X/ELOControl/EloFilm/sqlite-jdbc-3.36.0.3.jar",
+    "last_directory_selection": "F:/GitHub/Programing_X/ELOMain/EloFilm/src/main/resources/Elo",
+    "last_opened_file_path": "F:/GitHub/Programing_X/ELOMain/EloFilm/sqlite-jdbc-3.36.0.3.jar",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.42643678",
     "settings.editor.selected.configurable": "database.query.execution",
@@ -82,14 +93,14 @@
       <recent name="com.example.elo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\GitHub\Programing_X\ELOMain\EloFilm\src\main\resources\Database" />
+      <recent name="F:\GitHub\Programing_X\ELOMain\EloFilm\src\main\resources\Style\Fonts" />
+      <recent name="F:\GitHub\Programing_X\ELOMain\EloFilm\src\main\resources\Style" />
+      <recent name="F:\GitHub\Programing_X\ELOMain\EloFilm\src\main\java\Elo" />
       <recent name="F:\GitHub\Programing_X\EloFilm\src\main\Style" />
-      <recent name="$PROJECT_DIR$/src/main/java/Model" />
-      <recent name="$PROJECT_DIR$/src/main/resources/controller" />
-      <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
-      <recent name="$PROJECT_DIR$/src/main/java/fxml" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StageManager">
+  <component name="RunManager" selected="Application.Elo.StageManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.elo.HelloApplication" />
       <module name="ELO" />
@@ -105,7 +116,7 @@
     </configuration>
     <configuration name="StageManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Elo.StageManager" />
-      <module name="EloFilm" />
+      <module name="ELO" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Elo.*" />
@@ -144,7 +155,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StageManager" />
+        <item itemvalue="Application.Elo.StageManager" />
         <item itemvalue="Application.controller.StageManager" />
         <item itemvalue="Application.controller.HelloApplication" />
         <item itemvalue="Application.HelloApplication" />
@@ -164,6 +175,10 @@
       <workItem from="1671181130719" duration="16888000" />
       <workItem from="1671390581615" duration="14083000" />
       <workItem from="1674470610803" duration="2113000" />
+      <workItem from="1675019760026" duration="17045000" />
+      <workItem from="1675100236638" duration="3729000" />
+      <workItem from="1675116005627" duration="16556000" />
+      <workItem from="1675588888381" duration="575000" />
     </task>
     <task id="LOCAL-00001" summary="EloProject created">
       <created>1664525519125</created>
@@ -270,7 +285,28 @@
       <option name="project" value="LOCAL" />
       <updated>1674472489295</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="First windows is created ( UserMainView) &#10;it will be the Main Menu of a logged user. &#10;from this window can the user navigate to other windows">
+      <created>1675093111900</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1675093111900</updated>
+    </task>
+    <task id="LOCAL-00017" summary="UserMainView is almost complete.&#10;it needs button so can navigate other windows">
+      <created>1675175751618</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1675175751618</updated>
+    </task>
+    <task id="LOCAL-00018" summary="MovieCompare window is created. now it shows randomly two Films to be compared">
+      <created>1675684048388</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1675684048388</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +315,17 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="58efa2ce-2e08-4786-9327-dd761c522513">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -298,6 +345,11 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="58efa2ce-2e08-4786-9327-dd761c522513" value="TOOL_WINDOW" />
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="EloProject created" />
@@ -315,7 +367,10 @@
     <MESSAGE value="inserted image would be resized and cropped to a target size" />
     <MESSAGE value="problems by inserting new images in FilmEntryController is solved. but it's not clean at all." />
     <MESSAGE value="working on dependency problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on dependency problem" />
+    <MESSAGE value="First windows is created ( UserMainView) &#10;it will be the Main Menu of a logged user. &#10;from this window can the user navigate to other windows" />
+    <MESSAGE value="UserMainView is almost complete.&#10;it needs button so can navigate other windows" />
+    <MESSAGE value="MovieCompare window is created. now it shows randomly two Films to be compared" />
+    <option name="LAST_COMMIT_MESSAGE" value="MovieCompare window is created. now it shows randomly two Films to be compared" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -386,24 +441,19 @@
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>128</line>
-          <option name="timeStamp" value="97" />
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/UserMainViewController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Model/ModelDB.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="121" />
+          <url>file://$PROJECT_DIR$/src/main/java/Elo/MovieCompare.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Elo/StageManager.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="123" />
+          <line>24</line>
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

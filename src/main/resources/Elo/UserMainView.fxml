@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../Style/app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Elo.UserMainViewController">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="headerBanner">
+         <children>
+
+            <Label fx:id="title" layoutX="0" prefHeight="100.0" maxWidth="1200.0" minWidth="960.0" prefWidth="1200.0"   styleClass="appTitle" text="ELO RANKING"  />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane maxWidth="1200.0" minWidth="960.0" prefWidth="1200.0"  minHeight="400.0"  BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutY="12.0" prefHeight="160.0" prefWidth="1200.0" styleClass="comparePane">
+               <children>
+                  <ImageView fx:id="compareImageLeft" fitHeight="150.0" fitWidth="220.0" layoutX="245.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Style/img/heat.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="compareImageRight" fitHeight="150.0" fitWidth="220.0" layoutX="735.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Style/img/intersteller.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="490.0" layoutY="50.0" mnemonicParsing="false" prefHeight="50" prefWidth="220" styleClass="button" text="movie compare" onAction="#GotoCompare" />
+               </children>
+            </Pane>
+            <ListView fx:id="userAllFilms" layoutX="0" layoutY="200.0" prefHeight="700" prefWidth="1200.0" />
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <Pane BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane BorderPane.alignment="CENTER" />
+   </right>
+
+   <bottom>
+      <Pane minWidth="1200" prefHeight="100.0" prefWidth="1200.0" styleClass="headerBanner" BorderPane.alignment="CENTER">
+         <children>
+            <Button contentDisplay="CENTER" layoutX="490" layoutY="25" mnemonicParsing="false" prefHeight="50" prefWidth="220" styleClass="button" text="manage films" BorderPane.alignment="CENTER" />
+         </children>
+      </Pane>
+
+   </bottom>
+</BorderPane>

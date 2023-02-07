@@ -9,7 +9,7 @@
 
    </children>
    <top>
-      <VBox  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" />
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" />
    </top>
    <left>
       <VBox prefHeight="273.0" prefWidth="82.0" />
@@ -40,6 +40,7 @@
                   <Button fx:id="btnMovieList" mnemonicParsing="false" onAction="#OpenMovieList" text="MovieList" />
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="btnUserMain" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#OpenUserMainView" text="UserMainView" />
                </children>
             </VBox>
          </children></HBox>
